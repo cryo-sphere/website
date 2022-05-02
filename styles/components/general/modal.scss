@@ -1,0 +1,28 @@
+.modal-backdrop {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: $modal-backdrop;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow-y: hidden;
+}
+
+.modal {
+	width: clamp(50%, 700px, 90%);
+	height: min(50%, 300px);
+
+	margin: auto;
+	padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	background-color: $component-background-1;
+	border: 1px solid $component-background-border;
+	border-radius: $component-border-radius;
+}
