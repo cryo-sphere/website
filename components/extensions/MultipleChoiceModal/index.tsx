@@ -19,18 +19,18 @@ const MultipleChoiceModal: ReactFC<Props> = ({ onClick, isOpen, title, options }
 
 	return (
 		<Modal {...props}>
-			<div>
-				<h1>{title}</h1>
-				<button onClick={onClick}>
+			<div className="modal-top">
+				<h1 className="modal-title">{title}</h1>
+				<button className="modal-close-button" onClick={onClick}>
 					<i className="fa-solid fa-xmark" />
 				</button>
 			</div>
-			<ul>
+			<ul className="mcm-list">
 				{options.map((option, key) => (
-					<li key={key}>
-						<span>{option.name}</span>
-						{option.selected && <span>SELECTED</span>}
-					</li>
+					<button key={key} className={`mcm-item ${option.selected ? "mcm-item-selected" : "mcm-item-normal"}`} disabled={option.selected}>
+						<span className="mcm-item-name">{option.name}</span>
+						{option.selected && <span className="mcm-span-selected">SELECTED</span>}
+					</button>
 				))}
 			</ul>
 		</Modal>

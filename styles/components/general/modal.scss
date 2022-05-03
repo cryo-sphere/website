@@ -14,7 +14,7 @@
 
 .modal {
 	width: clamp(50%, 700px, 90%);
-	height: min(50%, 300px);
+	max-height: 90vh;
 
 	margin: auto;
 	padding: 0 2rem;
@@ -25,4 +25,38 @@
 	background-color: $component-background-1;
 	border: 1px solid $component-background-border;
 	border-radius: $component-border-radius;
+}
+
+.modal-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-top: 15px;
+	width: 100%;
+}
+
+.modal-title {
+	font-size: 25px;
+	font-weight: 600;
+
+	line-height: 25px;
+}
+
+.modal-close-button {
+	outline: none;
+	background: none;
+	border: none;
+
+	cursor: pointer;
+
+	> i {
+		font-size: 25px;
+		color: $grey;
+		transition: all 0.5s ease;
+
+		&:hover {
+			color: $white;
+		}
+	}
 }

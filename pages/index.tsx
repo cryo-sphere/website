@@ -12,7 +12,13 @@ const Home: NextPage = () => {
 				onClick={() => setModal(false)}
 				isOpen={modal}
 				title="Choose a bassboost level"
-				options={[{ name: "none", selected: false }]}
+				options={[
+					{ name: "None", selected: false },
+					{ name: "Low", selected: true },
+					{ name: "Medium", selected: false },
+					{ name: "Hard", selected: false },
+					{ name: "Extreme", selected: false }
+				]}
 			/>
 		</main>
 	);
