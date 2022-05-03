@@ -1,26 +1,32 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import React from "react";
 import type { ReactFC } from "../../../utils/types";
 import BackDrop from "./Backdrop";
 
-const variants = {
+const variants: Variants = {
 	hidden: {
-		y: "-100vh",
+		// y: "-100vh",
+		scale: 0,
 		opacity: 0
 	},
 	visible: {
-		y: "0",
+		// y: "0",
+		scale: 1,
 		opacity: 1,
 		transition: {
-			duration: 0.1,
+			// duration: 0.1,
 			type: "spring",
 			damping: 25,
 			stiffness: 500
 		}
 	},
 	exit: {
-		y: "100vh",
-		opacity: 0
+		// y: "100vh",
+		scale: 0,
+		opacity: 0,
+		transition: {
+			duration: 0.3
+		}
 	}
 };
 
