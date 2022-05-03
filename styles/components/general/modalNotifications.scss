@@ -11,16 +11,24 @@
 	justify-content: center;
 	align-items: center;
 
-	height: 30px;
-	min-width: 100px;
+	height: 50px;
+	max-width: fit-content;
 
-	padding: 30px;
 	border-radius: $component-border-radius + 10px;
 }
 
 .modal-notification-icon {
 	font-size: 40px;
-	margin-right: 25px;
+	min-width: 50px !important;
+	margin-left: 7px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	overflow: visible;
+	// white-space: nowrap;
+	// text-overflow: clip;
 
 	i {
 		color: $main;
@@ -29,4 +37,10 @@
 
 .modal-notification-text {
 	font-size: 25px;
+	margin-right: 10px;
+	margin-left: 5px;
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: clip;
 }

@@ -32,7 +32,7 @@ const Home: NextPage = () => {
 		<main>
 			<h1>Template</h1>
 			<button onClick={() => setModal(true)}>open modal</button>
-			<ModalNotifications icon="success" title="test" />
+			<ModalNotifications icon="success" title="Successfully deleted the playlist" enabled />
 			{/* <MultipleChoiceModal
 				onClick={() => setModal(false)}
 				isOpen={modal}
