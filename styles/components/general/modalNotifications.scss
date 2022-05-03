@@ -1,0 +1,32 @@
+.modal-notification {
+	background: $component-background-2;
+
+	position: fixed;
+	z-index: 1000;
+	top: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 30px;
+	min-width: 100px;
+
+	padding: 30px;
+	border-radius: $component-border-radius + 10px;
+}
+
+.modal-notification-icon {
+	font-size: 40px;
+	margin-right: 25px;
+
+	i {
+		color: $main;
+	}
+}
+
+.modal-notification-text {
+	font-size: 25px;
+}
