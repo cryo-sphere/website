@@ -31,14 +31,14 @@ const Home: NextPage = () => {
 		<main>
 			<h1>Template</h1>
 			<button onClick={() => setModal(true)}>open modal</button>
-			{/* <MultipleChoiceModal
+			<MultipleChoiceModal
 				onClick={() => setModal(false)}
 				isOpen={modal}
 				title="Choose a bassboost level"
 				options={items}
 				onSelected={onSelected}
 				onSelectedAfter="close"
-			/> */}
+			/>
 			<ConfirmModal
 				onClick={() => setModal(false)}
 				isOpen={modal}
