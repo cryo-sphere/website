@@ -44,6 +44,7 @@ const Home: NextPage = () => {
 				isOpen={modal}
 				title="Are you sure you want to delete this playlist?"
 				onConfirm={() => void 0}
+				onConfirmAfter="close"
 			/>
 		</main>
 	);
