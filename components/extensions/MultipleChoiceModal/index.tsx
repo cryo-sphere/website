@@ -6,8 +6,10 @@ interface Props {
 	isOpen: boolean;
 
 	title: string;
-	onSelected: (name: string) => void;
 	options: Options[];
+
+	onSelected: (name: string) => void;
+	onSelectedAfter: "open" | "close" | "notification";
 }
 
 interface Options {
@@ -15,8 +17,23 @@ interface Options {
 	selected: boolean;
 }
 
-const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, isOpen, title, options }) => {
+const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, onSelectedAfter, isOpen, title, options }) => {
 	const props = { onClick, isOpen };
+	const onSelectedEvent = (name: string) => {
+		switch (onSelectedAfter) {
+			case "close":
+				onSelected(name);
+				onClick();
+				break;
+			case "open":
+				onSelected(name);
+				break;
+			case "notification":
+				onSelected(name);
+				// TODO: add notification function run
+				break;
+		}
+	};
 
 	return (
 		<Modal {...props}>
@@ -30,7 +47,7 @@ const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, isOpen, titl
 				{options.map((option, key) => (
 					<button
 						key={key}
-						onClick={() => onSelected(option.name)}
+						onClick={() => onSelectedEvent(option.name)}
 						className={`mcm-item ${option.selected ? "mcm-item-selected" : "mcm-item-normal"}`}
 						disabled={option.selected}
 					>
