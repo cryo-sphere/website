@@ -1,0 +1,62 @@
+.mcm-list {
+	width: 100%;
+	height: 100%;
+
+	margin-bottom: 15px;
+	margin-top: 5px;
+
+	list-style: none;
+	overflow: auto;
+}
+
+.mcm-item:not(:first-child) {
+	margin-top: 5px;
+}
+
+.mcm-item {
+	border: none;
+	background: none;
+
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+	height: 40px;
+
+	padding: 10px;
+	border-radius: $component-border-radius;
+
+	&:enabled {
+		cursor: pointer;
+	}
+}
+
+.mcm-item-name {
+	font-size: 15px;
+}
+
+.mcm-item-normal {
+	background-color: $component-background-3;
+	transition: all 0.3s ease;
+
+	&:hover,
+	&:focus {
+		background-color: $component-background-2;
+		outline: none;
+	}
+}
+
+.mcm-item-selected {
+	background-color: $main;
+	transition: all 0.5s ease;
+
+	justify-content: space-between;
+
+	> .mcm-span-selected {
+		font-weight: 600;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}

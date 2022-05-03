@@ -1,12 +1,37 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
 @import url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* --vars-- */
 $white: #fff;
-$gray: #232527;
-$dark: #101010;
-$black: #0a0a0a;
+$main: #78a4fa;
+$grey: #aaa;
+
+$main-background: #242526;
+$nav-background: #404142;
+$component-background-1: #2f3136;
+$component-background-2: rgba(#18191c, 0.6);
+$component-background-3: #36393f;
+
+$button-grey: #404142;
+$button-grey-active: #595b5e;
+
+$button-main: $main;
+$button-main-active: #4181ff;
+
+$button-danger: #e74c3c;
+$button-danger-active: #ef3825;
+
+$switch-success: #5df18e;
+
+$button-nav: rgba($white, 0.15);
+$button-nav-active: rgba($white, 0.3);
+
+$modal-backdrop: rgba(#000, 0.75);
+
+$component-background-border: #696d76;
+
+$component-border-radius: 5px;
 
 * {
 	font-family: "Poppins", sans-serif;
@@ -17,7 +42,7 @@ $black: #0a0a0a;
 }
 
 body {
-	background: rgba($black, 0.94);
+	background: $main-background;
 	min-height: 100vh;
 
 	/* hide scroll bar */
@@ -97,3 +122,5 @@ a {
 		margin-bottom: 8px;
 	}
 }
+
+@import "./components/index.scss";
