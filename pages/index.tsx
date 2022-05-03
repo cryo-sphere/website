@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useState } from "react";
+import ConfirmModal from "../components/extensions/ConfirmModal";
 import MultipleChoiceModal from "../components/extensions/MultipleChoiceModal";
 
 const Home: NextPage = () => {
@@ -30,13 +31,19 @@ const Home: NextPage = () => {
 		<main>
 			<h1>Template</h1>
 			<button onClick={() => setModal(true)}>open modal</button>
-			<MultipleChoiceModal
+			{/* <MultipleChoiceModal
 				onClick={() => setModal(false)}
 				isOpen={modal}
 				title="Choose a bassboost level"
 				options={items}
 				onSelected={onSelected}
 				onSelectedAfter="close"
+			/> */}
+			<ConfirmModal
+				onClick={() => setModal(false)}
+				isOpen={modal}
+				title="Are you sure you want to delete this playlist?"
+				onConfirm={() => void 0}
 			/>
 		</main>
 	);

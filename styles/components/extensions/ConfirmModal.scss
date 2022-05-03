@@ -1,0 +1,48 @@
+.cm-buttons {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 75px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cm-button-cancel,
+.cm-button-continue {
+	width: 50%;
+	height: 100%;
+
+	border-radius: $component-border-radius;
+	border: none;
+
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.cm-button-cancel {
+	background-color: $button-grey;
+	margin-right: 5px;
+	transition: all 0.3s ease;
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		background: $button-grey-active;
+	}
+}
+
+.cm-button-continue {
+	background-color: $button-main;
+	margin-left: 5px;
+	transition: all 0.3s ease;
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		background: $button-main-active;
+	}
+}
