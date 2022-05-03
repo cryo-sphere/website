@@ -36,6 +36,7 @@ const Home: NextPage = () => {
 				title="Choose a bassboost level"
 				options={items}
 				onSelected={onSelected}
+				onSelectedAfter="close"
 			/>
 		</main>
 	);
