@@ -6,6 +6,7 @@ interface Props {
 	isOpen: boolean;
 
 	title: string;
+	onSelected: (name: string) => void;
 	options: Options[];
 }
 
@@ -14,7 +15,7 @@ interface Options {
 	selected: boolean;
 }
 
-const MultipleChoiceModal: ReactFC<Props> = ({ onClick, isOpen, title, options }) => {
+const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, isOpen, title, options }) => {
 	const props = { onClick, isOpen };
 
 	return (
@@ -27,7 +28,12 @@ const MultipleChoiceModal: ReactFC<Props> = ({ onClick, isOpen, title, options }
 			</div>
 			<ul className="mcm-list">
 				{options.map((option, key) => (
-					<button key={key} className={`mcm-item ${option.selected ? "mcm-item-selected" : "mcm-item-normal"}`} disabled={option.selected}>
+					<button
+						key={key}
+						onClick={() => onSelected(option.name)}
+						className={`mcm-item ${option.selected ? "mcm-item-selected" : "mcm-item-normal"}`}
+						disabled={option.selected}
+					>
 						<span className="mcm-item-name">{option.name}</span>
 						{option.selected && <span className="mcm-span-selected">SELECTED</span>}
 					</button>
