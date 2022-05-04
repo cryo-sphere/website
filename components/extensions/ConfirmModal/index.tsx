@@ -29,9 +29,12 @@ const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onCon
 		switch (onConfirmAfter) {
 			case "notification":
 				{
-					setNotificationEnabled(true);
-					const timeout = setTimeout(() => setNotificationEnabled(false), 5e3);
-					setNTimeout(timeout);
+					if (boolean) {
+						setNotificationEnabled(true);
+
+						const timeout = setTimeout(() => setNotificationEnabled(false), 5e3);
+						setNTimeout(timeout);
+					}
 
 					onConfirm(boolean);
 					onClick();
