@@ -194,13 +194,17 @@
 	background-color: $button-nav;
 	border-radius: $component-border-radius;
 
+	transform: rotate(0deg);
+
 	border: none;
 	transition: all 0.3s ease;
 	cursor: pointer;
 
 	#navbar-button-icon {
 		font-size: 25px;
-		margin-left: 10px;
+		margin-left: 15px;
+
+		transition: all 0.3s ease;
 	}
 
 	&:hover,
@@ -208,18 +212,79 @@
 		outline: none;
 		background-color: $button-nav-active;
 	}
+
+	&.enabled #navbar-button-icon {
+		transform: rotate(180deg);
+	}
+}
+
+.navbar-user-dropdown {
+	position: fixed;
+	z-index: 9999;
+
+	list-style: none;
+	float: left;
+
+	padding: 20px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	width: 100%;
+	min-width: fit-content;
+
+	background-color: $component-background-4;
+	border-radius: $component-border-radius;
+
+	transform: translateX(-15px) translateY(110px);
+}
+
+.navbar-user-dropdown-link {
+	width: 100%;
+	font-size: 22px;
+
+	display: flex;
+	align-items: center;
+	justify-content: left;
+
+	.button.button-danger {
+		background-color: transparent;
+		color: $button-danger;
+		cursor: pointer;
+
+		padding: 0;
+		margin-bottom: 3px;
+
+		&:hover,
+		:focus-visible {
+			color: $button-danger-active;
+		}
+	}
+
+	&.line {
+		justify-content: center;
+
+		div.line {
+			height: 2px;
+			width: 100%;
+
+			margin-top: 10px;
+			margin-bottom: 5px;
+
+			background-color: $button-nav-active;
+		}
+	}
 }
 
 .navbar-user-icon {
 	border-radius: 50%;
-	height: 50px;
-	width: 50px;
+	height: 40px;
+	width: 40px;
 
 	margin-right: 15px;
 }
 
 .navbar-user-title {
-	font-size: 25px;
+	font-size: 22px;
 	font-weight: 400;
 
 	overflow: hidden;
