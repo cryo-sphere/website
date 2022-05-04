@@ -47,6 +47,31 @@ const DivVariants: Variants = {
 	}
 };
 
+const iconVariants: Variants = {
+	initial: { opacity: 0, marginLeft: 12 },
+	entry: { opacity: 1, marginLeft: 7, transition: { delay: 0.3, duration: 0.1 } },
+	exit: {
+		opacity: 0,
+		marginLeft: 12,
+		transition: {
+			duration: 0.01,
+			delay: 0.5
+		}
+	}
+};
+
+const textVariants: Variants = {
+	initial: { opacity: 0 },
+	entry: { opacity: 1, transition: { delay: 0.3, duration: 0.5 } },
+	exit: {
+		opacity: 0,
+		transition: {
+			duration: 0.01,
+			delay: 0.5
+		}
+	}
+};
+
 const ModalNotifications: ReactFC<Props> = ({ title, icon, enabled }) => {
 	const getIcon = () => {
 		switch (icon) {
@@ -56,30 +81,30 @@ const ModalNotifications: ReactFC<Props> = ({ title, icon, enabled }) => {
 	};
 
 	const divController = useAnimation();
+	const iconController = useAnimation();
+	const textController = useAnimation();
 	useEffect(() => {
 		if (enabled) {
 			void divController.start("entry1");
 			void divController.start("entry2");
+
+			void iconController.start("entry");
+			void textController.start("entry");
 		} else {
 			void divController.start("exit1");
 			void divController.start("exit2");
+
+			void iconController.start("exit");
+			void textController.start("exit");
 		}
 	}, [enabled]);
 
 	return (
 		<motion.div initial="initial" variants={DivVariants} animate={divController} className="modal-notification">
-			<motion.span
-				initial={{ opacity: 0, marginLeft: 12 }}
-				animate={{ opacity: 1, marginLeft: 7, transition: { delay: 0.3, duration: 0.1 } }}
-				className="modal-notification-icon"
-			>
+			<motion.span variants={iconVariants} initial="initial" animate={iconController} className="modal-notification-icon">
 				{getIcon()}
 			</motion.span>
-			<motion.span
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1, transition: { delay: 0.3, duration: 0.5 } }}
-				className="modal-notification-text"
-			>
+			<motion.span variants={textVariants} initial="initial" animate={textController} className="modal-notification-text">
 				{title}
 			</motion.span>
 		</motion.div>
