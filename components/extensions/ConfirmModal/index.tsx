@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 import type { ReactFC } from "../../../utils/types";
 import Modal from "../../general/modal";
@@ -15,6 +16,8 @@ interface Props {
 }
 
 const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onConfirmAfter, notificationTitle }) => {
+	const { t } = useTranslation();
+
 	const [notificationEnabled, setNotificationEnabled] = useState(false);
 	const [nTimeout, setNTimeout] = useState<NodeJS.Timeout | undefined>();
 
@@ -65,10 +68,10 @@ const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onCon
 				</div>
 				<div className="cm-buttons">
 					<button className="cm-button-cancel" onClick={() => onConfirmEvent(false)}>
-						Cancel
+						{t("cancel")}
 					</button>
 					<button className="cm-button-continue" onClick={() => onConfirmEvent(true)}>
-						Continue
+						{t("continue")}
 					</button>
 				</div>
 			</Modal>
