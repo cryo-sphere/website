@@ -1,0 +1,51 @@
+.button {
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: $component-border-radius;
+
+	font-size: 20px;
+	font-weight: 500;
+
+	transition: all 0.2s ease;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.button-main {
+	background-color: $button-main;
+
+	&:hover,
+	&:focus {
+		background-color: $button-main-active;
+	}
+}
+
+.button-secondary-nav {
+	background-color: $button-nav;
+
+	&:hover,
+	&:focus {
+		background-color: $button-nav-active;
+	}
+}
+
+.button-secondary {
+	background-color: $button-grey;
+
+	&:hover,
+	&:focus {
+		background-color: $button-grey-active;
+	}
+}
+
+.button-danger {
+	background-color: $button-danger;
+
+	&:hover,
+	&:focus {
+		background-color: $button-danger-active;
+	}
+}
