@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import type { ReactFC } from "../../../utils/types";
 import Button from "../button";
+import MenuButton from "./MenuButton";
 import Navlink from "./navlink";
 
 const Navbar: ReactFC = () => {
@@ -12,6 +13,8 @@ const Navbar: ReactFC = () => {
 					<img className="navbar-logo-icon" src="/logo.png" alt="logo" />
 					<h2 className="navbar-logo-title">Stereo</h2>
 				</div>
+
+				{/* Navbar for PC */}
 				<div className="navbar-buttons">
 					<Navlink title="Commands" path="/commands" />
 					<Navlink title="FAQ" path="/faq" />
@@ -22,6 +25,9 @@ const Navbar: ReactFC = () => {
 				<Navlink title="Invite" path="/invite" external />
 				<Button title="Login" style="main" type="link" path="/api/login" />
 			</div>
+
+			{/* Navbar for mobile */}
+			<MenuButton onClick={() => void 0} />
 		</motion.div>
 	);
 };
