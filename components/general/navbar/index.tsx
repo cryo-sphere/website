@@ -1,4 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import type { ReactFC } from "../../../utils/types";
 import Button from "../button";
@@ -41,10 +42,12 @@ const Navbar: ReactFC = () => {
 			<div className="navbar-container-wrapper">
 				<motion.div className="navbar-container">
 					<div className="navbar-nav">
-						<div className="navbar-logo">
-							<img className="navbar-logo-icon" src="/logo.png" alt="logo" />
-							<h2 className="navbar-logo-title">Stereo</h2>
-						</div>
+						<Link href="/">
+							<a onClick={closeDropdown} className="navbar-logo">
+								<img className="navbar-logo-icon" src="/logo.png" alt="logo" />
+								<h2 className="navbar-logo-title">Stereo</h2>
+							</a>
+						</Link>
 
 						{/* Navbar for PC */}
 						<div className="navbar-buttons">
