@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import type { ReactFC } from "../../../utils/types";
+import Navlink from "./navlink";
 
 const Navbar: ReactFC = () => {
 	return (
@@ -11,9 +12,9 @@ const Navbar: ReactFC = () => {
 					<h2 className="navbar-logo-title">Stereo</h2>
 				</div>
 				<div className="navbar-buttons">
-					<span>Commands</span>
-					<span>FAQ</span>
-					<span>Status</span>
+					<Navlink title="Commands" path="/commands" />
+					<Navlink title="FAQ" path="/faq" />
+					<Navlink title="Status" path="/status" external />
 				</div>
 			</div>
 			<div className="navbar-buttons-bot">

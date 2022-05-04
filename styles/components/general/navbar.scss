@@ -56,3 +56,28 @@
 .navbar-buttons-bot {
 	width: 15%;
 }
+
+.navbar-navlink {
+	font-weight: 500;
+	font-size: 20px;
+
+	transition: all 0.2s ease;
+
+	> i {
+		transition: all 0.2s ease;
+	}
+
+	&:not(:first-child) {
+		margin-left: 20px;
+	}
+
+	&:hover,
+	&:focus {
+		color: $navlink-active;
+		outline: none;
+
+		> i {
+			color: $navlink-active;
+		}
+	}
+}
