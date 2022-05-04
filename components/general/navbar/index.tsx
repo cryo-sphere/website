@@ -10,6 +10,8 @@ const Navbar: ReactFC = () => {
 	const [enabled, setEnabled] = useState(false);
 	const mobileNavbarController = useAnimation();
 
+	const loggedIn = true; // !!!!TEMP BOOLEAN, CHANGE WHEN USER AUTH IS ADDED
+
 	useEffect(() => {
 		if (enabled) {
 			void mobileNavbarController.start({
@@ -34,6 +36,10 @@ const Navbar: ReactFC = () => {
 
 	const onClick = () => setEnabled(!enabled);
 	const closeDropdown = () => setEnabled(false);
+	const logoutButton = () => {
+		// TODO: add cookie remover
+		closeDropdown();
+	};
 
 	return (
 		<>
@@ -58,7 +64,15 @@ const Navbar: ReactFC = () => {
 					</div>
 					<div className="navbar-buttons-bot">
 						<Navlink title="Invite" path="/invite" external />
-						<Button title="Login" style="main" type="link" path="/api/login" />
+						{loggedIn ? (
+							<button className="navbar-user">
+								<img className="navbar-user-icon" src="https://static.daangamesdg.xyz/discord/pfp.gif" alt="discord pfp" />
+								<span className="navbar-user-title">{"a".repeat(32)}</span>
+								<i id="navbar-button-icon" className="fa-solid fa-angle-down" />
+							</button>
+						) : (
+							<Button title="Login" style="main" type="link" path="/api/login" />
+						)}
 					</div>
 
 					{/* Navbar for mobile */}
@@ -70,10 +84,28 @@ const Navbar: ReactFC = () => {
 						<Navlink onClick={closeDropdown} title="FAQ" path="/faq" />
 						<Navlink onClick={closeDropdown} title="Status" path="/status" external />
 					</li>
-					<li className="navbar-buttons-bot-mobile">
-						<Button onClick={closeDropdown} title="Invite" style="secondary-nav" type="link" path="/invite" external />
-						<Button onClick={closeDropdown} title="Login" style="main" type="link" path="/api/login" />
-					</li>
+					{loggedIn ? (
+						<>
+							<div className="navbar-user">
+								<img className="navbar-user-icon" src="https://static.daangamesdg.xyz/discord/pfp.gif" alt="discord pfp" />
+								<span className="navbar-user-title">DaanGamesDG</span>
+							</div>
+							<li className="navbar-buttons-mobile user">
+								<Navlink onClick={closeDropdown} title="Dashboard" path="/dashboard" />
+								<Navlink onClick={closeDropdown} title="Playlists" path="/playlists" />
+								<Navlink onClick={closeDropdown} title="Webplayer" path="/webplayer" />
+							</li>
+							<li className="navbar-buttons-bot-mobile">
+								<Button onClick={closeDropdown} title="Invite" style="secondary-nav" type="link" path="/invite" external />
+								<Button onClick={logoutButton} title="Logout" style="danger" type="button" />
+							</li>
+						</>
+					) : (
+						<li className="navbar-buttons-bot-mobile">
+							<Button onClick={closeDropdown} title="Invite" style="secondary-nav" type="link" path="/invite" external />
+							<Button onClick={closeDropdown} title="Login" style="main" type="link" path="/api/login" />
+						</li>
+					)}
 				</motion.ul>
 			</div>
 		</>
