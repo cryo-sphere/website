@@ -13,7 +13,7 @@ const Navbar: ReactFC = () => {
 	useEffect(() => {
 		if (enabled) {
 			void mobileNavbarController.start({
-				height: "100vh",
+				height: "calc(100vh - 80px)",
 				transition: {
 					duration: 1,
 					ease: [0.6, 0, 0.17, 1]
