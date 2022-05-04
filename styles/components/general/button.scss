@@ -11,7 +11,7 @@
 
 	border: none;
 
-	&:focus {
+	&:focus-visible {
 		outline: none;
 	}
 }
@@ -20,7 +20,7 @@
 	background-color: $button-main;
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		background-color: $button-main-active;
 	}
 }
@@ -29,7 +29,7 @@
 	background-color: $button-nav;
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		background-color: $button-nav-active;
 	}
 }
@@ -38,7 +38,7 @@
 	background-color: $button-grey;
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		background-color: $button-grey-active;
 	}
 }
@@ -47,7 +47,7 @@
 	background-color: $button-danger;
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		background-color: $button-danger-active;
 	}
 }

@@ -103,7 +103,7 @@
 	}
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		color: $navlink-active;
 		outline: none;
 
@@ -204,7 +204,7 @@
 	}
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		outline: none;
 		background-color: $button-nav-active;
 	}
