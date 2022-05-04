@@ -19,9 +19,10 @@ const ModalNotifications: ReactFC<Props> = ({ title, icon, enabled }) => {
 
 	const divController = useAnimation();
 	useEffect(() => {
-		void (() => {
+		if (enabled) {
 			void divController.start({
 				top: 50,
+				opacity: 1,
 				transition: {
 					duration: 0.5,
 					bounce: 0.4,
@@ -37,7 +38,15 @@ const ModalNotifications: ReactFC<Props> = ({ title, icon, enabled }) => {
 					ease: [0.6, 0, 0.17, 1]
 				}
 			});
-		})();
+		} else {
+			void divController.start({
+				top: -50,
+				opacity: 0,
+				transition: {
+					duration: 0.5
+				}
+			});
+		}
 	}, [enabled]);
 
 	return (
