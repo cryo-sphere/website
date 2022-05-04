@@ -17,21 +17,22 @@ interface PropsLink {
 
 	type: "link";
 	path: string;
+	onClick?: () => void;
 }
 
 type Props = { type: "link" | "button" } & (PropsButton | PropsLink);
 
 const Button: ReactFC<Props> = (props) => {
-	const { style, title, type, external } = props;
+	const { style, title, type, external, onClick } = props;
 	const className = `button button-${style}`;
 
 	return type === "button" ? (
-		<button className={className} onClick={props.onClick}>
+		<button className={className} onClick={onClick}>
 			{external && <i className="fa-solid fa-arrow-up-right-from-square" />} {title}
 		</button>
 	) : (
 		<Link href={props.path}>
-			<a className={className}>
+			<a onClick={onClick} className={className}>
 				{external && <i className="fa-solid fa-arrow-up-right-from-square" />} {title}
 			</a>
 		</Link>

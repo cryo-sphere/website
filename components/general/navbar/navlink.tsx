@@ -7,12 +7,14 @@ interface Props {
 
 	external?: boolean;
 	newWindow?: boolean;
+
+	onClick?: () => void;
 }
 
-const Navlink: ReactFC<Props> = ({ title, path, external, newWindow }) => {
+const Navlink: ReactFC<Props> = ({ title, path, external, newWindow, onClick }) => {
 	return (
 		<Link href={path}>
-			<a className="navbar-navlink" target={newWindow ? "_blank" : undefined} rel="noopener noreferrer">
+			<a onClick={onClick} className="navbar-navlink" target={newWindow ? "_blank" : undefined} rel="noopener noreferrer">
 				{external && <i className="fa-solid fa-arrow-up-right-from-square" />} {title}
 			</a>
 		</Link>
