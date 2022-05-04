@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 import type { ReactFC } from "../../../utils/types";
 import Modal from "../../general/modal";
@@ -22,6 +23,7 @@ interface Options {
 }
 
 const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, onSelectedAfter, isOpen, title, notificationTitle, options }) => {
+	const { t } = useTranslation();
 	const [notificationEnabled, setNotificationEnabled] = useState(false);
 	const [nTimeout, setNTimeout] = useState<NodeJS.Timeout | undefined>();
 
@@ -79,7 +81,7 @@ const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, onSelectedAf
 							disabled={option.selected}
 						>
 							<span className="mcm-item-name">{option.name}</span>
-							{option.selected && <span className="mcm-span-selected">SELECTED</span>}
+							{option.selected && <span className="mcm-span-selected">{t("selected")}</span>}
 						</button>
 					))}
 				</ul>
