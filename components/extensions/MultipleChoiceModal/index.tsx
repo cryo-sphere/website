@@ -8,6 +8,8 @@ interface Props {
 	isOpen: boolean;
 
 	title: string;
+	notificationTitle?: string;
+
 	options: Options[];
 
 	onSelected: (name: string) => void;
@@ -19,7 +21,7 @@ interface Options {
 	selected: boolean;
 }
 
-const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, onSelectedAfter, isOpen, title, options }) => {
+const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, onSelectedAfter, isOpen, title, notificationTitle, options }) => {
 	const [notificationEnabled, setNotificationEnabled] = useState(false);
 	const [nTimeout, setNTimeout] = useState<NodeJS.Timeout | undefined>();
 
@@ -60,7 +62,7 @@ const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, onSelectedAf
 
 	return (
 		<>
-			<ModalNotifications icon="success" title="Successfully deleted the playlist" enabled={notificationEnabled} />
+			<ModalNotifications icon="success" title={notificationTitle ?? "No title added"} enabled={notificationEnabled} />
 			<Modal {...props}>
 				<div className="modal-top">
 					<h1 className="modal-title">{title}</h1>

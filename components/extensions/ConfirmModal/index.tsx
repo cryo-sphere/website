@@ -8,11 +8,13 @@ interface Props {
 	isOpen: boolean;
 
 	title: string;
+	notificationTitle?: string;
+
 	onConfirmAfter: "notification" | "close";
 	onConfirm: (result: boolean) => void;
 }
 
-const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onConfirmAfter }) => {
+const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onConfirmAfter, notificationTitle }) => {
 	const [notificationEnabled, setNotificationEnabled] = useState(false);
 	const [nTimeout, setNTimeout] = useState<NodeJS.Timeout | undefined>();
 
@@ -50,7 +52,7 @@ const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onCon
 
 	return (
 		<>
-			<ModalNotifications icon="success" title="Successfully deleted the playlist" enabled={notificationEnabled} />
+			<ModalNotifications icon="success" title={notificationTitle ?? "No title added"} enabled={notificationEnabled} />
 			<Modal {...props}>
 				<div className="modal-top">
 					<h1 className="modal-title">{title}</h1>
