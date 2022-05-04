@@ -1,12 +1,32 @@
-.navbar-container {
-	background: $nav-background;
-	border-radius: 10px;
+.fake-navbar {
+	height: 105px;
+}
+
+.navbar-container-wrapper {
+	width: 100%;
+	height: fit-content;
 
 	position: fixed;
 	z-index: 9999;
 	top: 25px;
 	left: 50%;
 	transform: translateX(-50%);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar-container {
+	background: $nav-background;
+	border-radius: 10px;
+
+	// position: fixed;
+	// z-index: 9999;
+	// top: 25px;
+	// left: 50%;
+	// transform: translateX(-50%);
 
 	width: 90%;
 	height: 80px;
@@ -125,11 +145,66 @@
 	transition: all 0.5s ease;
 }
 
+.navbar-mobile {
+	width: 100%;
+
+	display: none;
+	flex-direction: column;
+
+	overflow: hidden;
+
+	background-color: $nav-background;
+}
+
+.navbar-buttons-mobile {
+	width: 100%;
+	padding-left: 20px;
+	padding-bottom: 20px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	border-bottom: 2px solid $component-background-border;
+
+	.navbar-navlink {
+		margin-left: 0px !important;
+		margin-top: 10px;
+
+		font-size: 25px;
+	}
+}
+
+.navbar-buttons-bot-mobile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	margin-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	> a.button {
+		width: 100%;
+		text-align: center;
+
+		&:not(:first-child) {
+			margin-top: 20px;
+		}
+	}
+}
+
 @media screen and (max-width: 1024px) {
+	.navbar-container-wrapper {
+		top: 0;
+	}
+
 	.navbar-container {
 		width: 100%;
-		top: 0;
 		border-radius: 0;
+
+		border-bottom: 1px solid $component-background-border;
 	}
 
 	.navbar-logo-title {
@@ -143,5 +218,9 @@
 
 	.navbar-menu-button {
 		display: block;
+	}
+
+	.navbar-mobile {
+		display: flex;
 	}
 }
