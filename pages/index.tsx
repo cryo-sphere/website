@@ -1,7 +1,17 @@
-import type { NextPage } from "next";
+import type { GetStaticPropsContext, NextPage } from "next";
 import { useState } from "react";
 import ConfirmModal from "../components/extensions/ConfirmModal";
+import { loadTranslations } from "../utils/i18n";
 // import MultipleChoiceModal from "../components/extensions/MultipleChoiceModal";
+
+export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
+	const translations = await loadTranslations(locale ?? "en", ["common"]);
+	return {
+		props: {
+			...translations
+		}
+	};
+};
 
 const Home: NextPage = () => {
 	const [modal, setModal] = useState(false);
