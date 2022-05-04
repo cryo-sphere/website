@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import ConfirmModal from "../components/extensions/ConfirmModal";
 // import MultipleChoiceModal from "../components/extensions/MultipleChoiceModal";
-import ModalNotifications from "../components/general/modalNotifications";
 
 const Home: NextPage = () => {
 	const [modal, setModal] = useState(false);
@@ -32,7 +31,6 @@ const Home: NextPage = () => {
 		<main>
 			<h1>Template</h1>
 			<button onClick={() => setModal(true)}>open modal</button>
-			<ModalNotifications icon="success" title="Successfully deleted the playlist" enabled />
 			{/* <MultipleChoiceModal
 				onClick={() => setModal(false)}
 				isOpen={modal}
@@ -46,7 +44,7 @@ const Home: NextPage = () => {
 				isOpen={modal}
 				title="Are you sure you want to delete this playlist?"
 				onConfirm={() => void 0}
-				onConfirmAfter="close"
+				onConfirmAfter="notification"
 			/>
 		</main>
 	);
