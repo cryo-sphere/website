@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import type { ReactFC } from "../../../utils/types";
+import Button from "../button";
 import Navlink from "./navlink";
 
 const Navbar: ReactFC = () => {
@@ -18,8 +19,8 @@ const Navbar: ReactFC = () => {
 				</div>
 			</div>
 			<div className="navbar-buttons-bot">
-				<span>Invite</span>
-				<span>Login</span>
+				<Navlink title="Invite" path="/invite" external />
+				<Button title="Login" style="main" type="link" path="/api/login" />
 			</div>
 		</motion.div>
 	);

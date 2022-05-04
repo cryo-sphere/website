@@ -54,7 +54,17 @@
 }
 
 .navbar-buttons-bot {
-	width: 15%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	> a.button {
+		margin-left: 20px;
+	}
+
+	> a.navbar-navlink {
+		width: 80px;
+	}
 }
 
 .navbar-navlink {
