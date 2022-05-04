@@ -13,9 +13,15 @@ interface Props {
 }
 
 const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onConfirmAfter }) => {
-	const props = { onClick, isOpen };
 	const [notificationEnabled, setNotificationEnabled] = useState(false);
 	const [nTimeout, setNTimeout] = useState<NodeJS.Timeout | undefined>();
+
+	const onClickEvent = () => {
+		setNotificationEnabled(false);
+		onClick();
+	};
+
+	const props = { onClick: onClickEvent, isOpen };
 
 	const onConfirmEvent = (boolean: boolean) => {
 		switch (onConfirmAfter) {
@@ -31,7 +37,7 @@ const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onCon
 				break;
 			case "close":
 				onConfirm(boolean);
-				onClick();
+				onClickEvent();
 				break;
 		}
 	};
@@ -48,7 +54,7 @@ const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onCon
 			<Modal {...props}>
 				<div className="modal-top">
 					<h1 className="modal-title">{title}</h1>
-					<button className="modal-close-button" onClick={onClick}>
+					<button className="modal-close-button" onClick={onClickEvent}>
 						<i className="fa-solid fa-xmark" />
 					</button>
 				</div>
