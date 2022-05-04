@@ -4,5 +4,5 @@ commit_message: "Chore(Crowdin): new translations for %original_file_name% (%lan
 pull_request_title: "Chore(Crowdin): new translations"
 append_commit_message: false
 files:
-  - source: /public/locales/en-US/*.json
-    translation: /public/locales/%locale%/%original_file_name%
+  - source: /public/locales/en/*.json
+    translation: /public/locales/%two_letters_code%/%original_file_name%
