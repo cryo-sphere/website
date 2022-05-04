@@ -4,6 +4,7 @@ import type { ReactFC } from "../../../utils/types";
 interface PropsButton {
 	title: string;
 	style: "main" | "secondary-nav" | "secondary" | "danger";
+	external?: boolean;
 
 	type: "button";
 	onClick: () => void;
@@ -12,6 +13,7 @@ interface PropsButton {
 interface PropsLink {
 	title: string;
 	style: "main" | "secondary-nav" | "secondary" | "danger";
+	external?: boolean;
 
 	type: "link";
 	path: string;
@@ -20,16 +22,18 @@ interface PropsLink {
 type Props = { type: "link" | "button" } & (PropsButton | PropsLink);
 
 const Button: ReactFC<Props> = (props) => {
-	const { style, title, type } = props;
+	const { style, title, type, external } = props;
 	const className = `button button-${style}`;
 
 	return type === "button" ? (
 		<button className={className} onClick={props.onClick}>
-			{title}
+			{external && <i className="fa-solid fa-arrow-up-right-from-square" />} {title}
 		</button>
 	) : (
 		<Link href={props.path}>
-			<a className={className}>{title}</a>
+			<a className={className}>
+				{external && <i className="fa-solid fa-arrow-up-right-from-square" />} {title}
+			</a>
 		</Link>
 	);
 };
