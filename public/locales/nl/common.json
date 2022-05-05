@@ -3,5 +3,8 @@
 	"continue": "continue",
 	"yes": "yes",
 	"no": "no",
-	"selected": "selected"
+	"selected": "selected",
+	"login": "log in",
+	"logout": "log uit",
+	"invite": "uitnodigen"
 }
