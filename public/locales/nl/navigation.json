@@ -1,7 +1,7 @@
 {
-	"commands": "commando's",
+	"commands": "commands",
 	"status": "status",
 	"dashboard": "dashboard",
-	"webplayer": "webspeler",
-	"playlists": "afspeellijsten"
+	"webplayer": "webplayer",
+	"playlists": "playlists"
 }
