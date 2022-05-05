@@ -1,0 +1,15 @@
+.home-background {
+	background-image: url("/content/landing/note.svg");
+	background-position: 175% 5px;
+	background-repeat: no-repeat;
+	background-size: 1000px;
+
+	height: calc(100vh - 105px);
+}
+
+.home-background-svg {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}

@@ -1,8 +1,12 @@
 import type { ReactFC } from "../../../utils/types";
 
-const Page: ReactFC = ({ children }) => {
+interface Props {
+	className?: string;
+}
+
+const Page: ReactFC<Props> = ({ children, className }) => {
 	return (
-		<div className="page-wrapper">
+		<div className={`page-wrapper ${className}`}>
 			<div className="page-container">{children}</div>
 		</div>
 	);
