@@ -4,7 +4,7 @@
 	"yes": "ja",
 	"no": "nee",
 	"selected": "geselecteerd",
-	"login": "login",
-	"logout": "logout",
-	"invite": "invite"
+	"login": "log in",
+	"logout": "log uit",
+	"invite": "uitnodigen"
 }
