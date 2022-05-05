@@ -5,7 +5,7 @@ import { loadTranslations } from "../utils/i18n";
 // import MultipleChoiceModal from "../components/extensions/MultipleChoiceModal";
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
-	const translations = await loadTranslations(locale ?? "en", ["common"]);
+	const translations = await loadTranslations(locale ?? "en");
 	return {
 		props: {
 			...translations
