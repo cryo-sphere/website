@@ -27,7 +27,7 @@
 	transition: all 0.3s ease;
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		outline: none;
 
 		background: $button-grey-active;
@@ -40,7 +40,7 @@
 	transition: all 0.3s ease;
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		outline: none;
 
 		background: $button-main-active;

@@ -1,7 +1,10 @@
 {
-	"cancel": "annuleren",
-	"continue": "doorgaan",
-	"yes": "ja",
-	"no": "nee",
-	"selected": "geselecteerd"
+	"cancel": "cancel",
+	"continue": "continue",
+	"yes": "yes",
+	"no": "no",
+	"selected": "selected",
+	"login": "log in",
+	"logout": "log uit",
+	"invite": "uitnodigen"
 }
