@@ -41,8 +41,6 @@
 .navbar-nav {
 	display: flex;
 	align-items: center;
-
-	width: 100%;
 }
 
 .navbar-logo {
@@ -81,10 +79,6 @@
 
 	> a.button {
 		margin-left: 20px;
-	}
-
-	> a.navbar-navlink {
-		width: 80px;
 	}
 }
 
