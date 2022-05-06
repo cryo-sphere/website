@@ -2,10 +2,10 @@
 	"big_section": {
 		"filters": "Pas je favoriete filters toe, zoals Karaoke. Speel er de hele dag mee, they will never let you down.",
 		"permissions": "Schakel {{commands_var}} uit voor bepaalde gebruikers of rollen met één klik op de knop op het {{dashboard_var}}. Nu kunnen ze niet meer met de bot knoeien!",
-		"multilingual": "Stereo wordt door honderden gebruikers over de hele wereld gebruikt en niet iedereen spreekt Engels. Daarom is Stereo vertaald in meerdere verschillende talen, zodat iedereen het leuke en hoge qualiteit audio op zijn manier kan ervaren."
+		"multilingual": "Stereo wordt door honderden gebruikers over de hele wereld gebruikt en niet iedereen spreekt Engels. Daarom is Stereo vertaald in meerdere verschillende talen, zodat iedereen het leuke en hoge kwaliteit audio op zijn manier kan ervaren."
 	},
 	"small_section": {
-		"title": "Nog steeds niet overtuiged?",
+		"title": "Nog steeds niet overtuigd?",
 		"desc": "Maak je geen zorgen, we zijn nog niet klaar!",
 		"money": {
 			"title": "Geld, welk geld?",
@@ -25,15 +25,15 @@
 		},
 		"multiplatform": {
 			"title": "ughh, Ik wil YouTube niet gebruiken. 😠",
-			"desc": "Wees niet bang, we hebben een oplossing! Wij ondersteuen ook playback via SoundCloud! Spotify en Deezer zijn ook ondersteund voor zoekopdrachten!!"
+			"desc": "Wees niet bang, we hebben een oplossing! Wij ondersteunen ook playback via SoundCloud! Spotify en Deezer zijn ook ondersteund voor zoekopdrachten!!"
 		},
 		"playlists": {
-			"title": "{{playlists_var}}, vol met nummers om naar te luisteren..",
+			"title": "{{playlists_var}}, vol met nummers om naar te luisteren.",
 			"desc": "Stereo heeft zijn eigen afspeellijst functie waarmee je met gemak afspeelbare audio linkjes kan opslaan."
 		}
 	},
 	"invite": {
 		"title": "Join de club",
-		"desc": "{{invite_var}} Stereo vandaag en luister naar hoge qualiteit audio for niets!"
+		"desc": "{{invite_var}} Stereo vandaag en luister naar hoge kwaliteit audio voor niets!"
 	}
 }
