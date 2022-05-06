@@ -3493,6 +3493,7 @@ __metadata:
     next-i18next: ^11.0.0
     react: 18.1.0
     react-dom: 18.1.0
+    react-intersection-observer: ^9.1.0
     sass: ^1.51.0
     typescript: 4.6.4
   languageName: unknown
@@ -3984,6 +3985,15 @@ __metadata:
     react-native:
       optional: true
   checksum: 666594e20dcff000294e904b6ea36f4e5fa2d3b7cebf8c78f04ec3b96ff52d9ad2931adb0d6865ccbd870cc8a782f76a77dfc134653647c8fd73c4217a65e0e6
+  languageName: node
+  linkType: hard
+
+"react-intersection-observer@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "react-intersection-observer@npm:9.1.0"
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
+  checksum: 1d4cabaea62d70d551687b9d6561e9892a87f8f4ace46b8bbf006788d36061a49e3c0774a89ad24f1e35dc3dc5ba653ca26064199554ce071a4787823f875ee4
   languageName: node
   linkType: hard
 

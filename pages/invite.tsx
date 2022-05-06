@@ -1,11 +1,12 @@
 import type { GetStaticPropsContext, NextPage } from "next";
+import { i18n } from "next-i18next";
 import { useState } from "react";
 import ConfirmModal from "../components/extensions/ConfirmModal";
 import { loadTranslations } from "../utils/i18n";
 // import MultipleChoiceModal from "../components/extensions/MultipleChoiceModal";
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
-	const translations = await loadTranslations(locale ?? "en");
+	const translations = await loadTranslations(i18n!, locale ?? "en");
 	return {
 		props: {
 			...translations
