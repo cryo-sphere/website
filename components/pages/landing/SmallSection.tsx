@@ -61,36 +61,6 @@ export const SmallSection: ReactFC<Props> = () => {
 						{listRight.map((item, key) => (
 							<SmallSectionComp key={key} {...item} />
 						))}
-						{/* <div className="landing-small-topic">
-							<div className="landing-small-topic-icon">
-								<i id="special" className="fa-solid fa-gears" />
-							</div>
-							<div className="landing-small-topic-text">
-								<h1>Who doesn’t like dashboards?</h1>
-								<p>Change all the settings to your likings with one click of a button on the dashboard.</p>
-							</div>
-						</div>
-						<div className="landing-small-topic">
-							<div className="landing-small-topic-icon">
-								<i className="fa-solid fa-radio" />
-							</div>
-							<div className="landing-small-topic-text">
-								<h1>ughh, I hate using YouTube. 😠</h1>
-								<p>
-									Don’t worry, we got you covered! We support SoundCloud playback too! Spotify and Deezer are supported as search
-									aswell!
-								</p>
-							</div>
-						</div>
-						<div className="landing-small-topic">
-							<div className="landing-small-topic-icon">
-								<i className="fa-solid fa-list" />
-							</div>
-							<div className="landing-small-topic-text">
-								<h1>Playlists, full of songs to listen to.</h1>
-								<p>Stereo has it’s own playlist feature which allows you to store playable audio links with ease.</p>
-							</div>
-						</div> */}
 					</div>
 				</div>
 			</div>

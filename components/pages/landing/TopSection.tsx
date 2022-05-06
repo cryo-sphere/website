@@ -3,6 +3,7 @@ import { capitalise } from "../../../utils/string";
 import type { ReactFC } from "../../../utils/types";
 import Button from "../../general/button";
 import Page from "../../general/page";
+import { BigSectionComp } from "./BigSectionComp";
 import { NotesAnimationSvg, NoteSvg } from "./Svgs";
 
 interface Props {
@@ -10,6 +11,27 @@ interface Props {
 }
 
 export const TopSection: ReactFC<Props> = ({ t }) => {
+	const BigList = [
+		{
+			title: "Never gonna give... karaoke up",
+			desc: "Apply your favourite filters like Karaoke. Play with it all day long, they will never let you down.",
+			img: "/content/landing/karaoke.svg",
+			imgId: "one"
+		},
+		{
+			title: "Nobody can hurt me, no more",
+			desc: "Apply your favourite filters like Karaoke. Play with it all day long, they will never let you down.",
+			img: "/content/landing/permissions.svg",
+			imgId: "two"
+		},
+		{
+			title: "Around the world, around the world...",
+			desc: "Stereo is used by hundreds of users across the globe and not everyone speaks English, that’s why Stereo is translated in multiple different languages so everyone can experience the fun and high quality audio their way.",
+			img: "/content/landing/languages.svg",
+			imgId: "three"
+		}
+	];
+
 	return (
 		<Page>
 			<NoteSvg />
@@ -31,35 +53,9 @@ export const TopSection: ReactFC<Props> = ({ t }) => {
 			</div>
 
 			<div className="landing-big-section-container">
-				<div className="landing-big-section">
-					<div className="landing-big-section-text">
-						<h1 className="landing-big-title">Never gonna give... karaoke up</h1>
-						<p className="landing-big-text">
-							Apply your favourite filters like Karaoke. Play with it all day long, they will never let you down.
-						</p>
-					</div>
-					<img id="one" className="landing-big-image" src="/content/landing/karaoke.svg" alt="karaoke image" />
-				</div>
-				<div className="landing-big-section">
-					<img id="two" className="landing-big-image" src="/content/landing/permissions.svg" alt="karaoke image" />
-					<div className="landing-big-section-text">
-						<h1 className="landing-big-title">Nobody can hurt me, no more</h1>
-						<p className="landing-big-text">
-							Turn of commands for certain users or roles with one click of a button on the dashboard. Now they can’t mess with the bot
-							anymore!
-						</p>
-					</div>
-				</div>
-				<div className="landing-big-section">
-					<div className="landing-big-section-text">
-						<h1 className="landing-big-title">Around the world, around the world...</h1>
-						<p className="landing-big-text">
-							Stereo is used by hundreds of users across the globe and not everyone speaks English, that’s why Stereo is translated in
-							multiple different languages so everyone can experience the fun and high quality audio their way.
-						</p>
-					</div>
-					<img id="three" className="landing-big-image" src="/content/landing/languages.svg" alt="karaoke image" />
-				</div>
+				{BigList.map((item) => (
+					<BigSectionComp key={item.imgId} {...item} />
+				))}
 			</div>
 		</Page>
 	);
