@@ -1,4 +1,5 @@
 import type { TFunction } from "next-i18next";
+import { capitalise } from "../../../utils/string";
 import type { ReactFC } from "../../../utils/types";
 import Page from "../../general/page";
 import { SmallSectionComp } from "./SmallSectionComp";
@@ -7,39 +8,44 @@ interface Props {
 	t: TFunction;
 }
 
-export const SmallSection: ReactFC<Props> = () => {
+export const SmallSection: ReactFC<Props> = ({ t }) => {
+	const yes_var = t("common:yes");
+	const webplayer_var = t("navigation:webplayer");
+	const playlists_var = t("navigation:playlist");
+	const dashboard_var = t("navigation:dashboard");
+
 	const listLeft = [
 		{
-			title: "Money, which money?",
-			desc: "Stereo is and will always be 100% free with no hidden costs.",
+			title: t("landing:small_section.money.title"),
+			desc: t("landing:small_section.money.desc"),
 			icon: "fa-solid fa-sack-dollar"
 		},
 		{
-			title: "Downtime? That doesn’t exist.",
-			desc: "You won’t miss a single note with 99.99% guaranteed uptime.",
+			title: t("landing:small_section.downtime.title"),
+			desc: t("landing:small_section.downtime.desc"),
 			icon: "fa-solid fa-server"
 		},
 		{
-			title: "Commands? So outdated.",
-			desc: "Yes, we have a webplayer too! Now you can do whatever you want from the web, no more switching to Discord.",
+			title: t("landing:small_section.webplayer.title"),
+			desc: capitalise(t("landing:small_section.webplayer.desc", { yes_var, webplayer_var })),
 			icon: "fa-solid fa-sliders"
 		}
 	];
 
 	const listRight = [
 		{
-			title: "Money, which money?",
-			desc: "Change all the settings to your likings with one click of a button on the dashboard.",
+			title: t("landing:small_section.dashboard.title"),
+			desc: t("landing:small_section.dashboard.desc", { dashboard_var }),
 			icon: "fa-solid fa-gears"
 		},
 		{
-			title: "ughh, I hate using YouTube. 😠",
-			desc: "	Don’t worry, we got you covered! We support SoundCloud playback too! Spotify and Deezer are supported as search aswell!",
+			title: t("landing:small_section.multiplatform.title"),
+			desc: t("landing:small_section.multiplatform.desc"),
 			icon: "fa-solid fa-radio"
 		},
 		{
-			title: "Playlists, full of songs to listen to..",
-			desc: "Stereo has it’s own playlist feature which allows you to store playable audio links with ease.",
+			title: capitalise(t("landing:small_section.playlists.title", { playlists_var })),
+			desc: t("landing:small_section.playlists.desc"),
 			icon: "fa-solid fa-list"
 		}
 	];
@@ -48,8 +54,8 @@ export const SmallSection: ReactFC<Props> = () => {
 		<Page className="small-section">
 			<div className="landing-small-section-container">
 				<div className="landing-small-title">
-					<h3 className="landing-small-title-text">Still not convinced?</h3>
-					<p className="landing-small-desc">Don’t worry, we aren’t done yet!</p>
+					<h3 className="landing-small-title-text">{t("landing:small_section.title").toString()}</h3>
+					<p className="landing-small-desc">{t("landing:small_section.desc").toString()}</p>
 				</div>
 				<div className="landing-small-topics">
 					<div className="landing-small-topics-left">

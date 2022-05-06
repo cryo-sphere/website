@@ -11,22 +11,25 @@ interface Props {
 }
 
 export const TopSection: ReactFC<Props> = ({ t }) => {
+	const dashboard_var = t("navigation:dashboard");
+	const commands_var = t("navigation:commands");
+
 	const BigList = [
 		{
-			title: "Never gonna give... karaoke up",
-			desc: "Apply your favourite filters like Karaoke. Play with it all day long, they will never let you down.",
+			title: `Never gonna give...${t("common:karaoke")} up`,
+			desc: t("landing:big_section.filters"),
 			img: "/content/landing/karaoke.svg",
 			imgId: "one"
 		},
 		{
 			title: "Nobody can hurt me, no more",
-			desc: "Apply your favourite filters like Karaoke. Play with it all day long, they will never let you down.",
+			desc: t("landing:big_section.permissions", { dashboard_var, commands_var }),
 			img: "/content/landing/permissions.svg",
 			imgId: "two"
 		},
 		{
 			title: "Around the world, around the world...",
-			desc: "Stereo is used by hundreds of users across the globe and not everyone speaks English, that’s why Stereo is translated in multiple different languages so everyone can experience the fun and high quality audio their way.",
+			desc: t("landing:big_section.multilingual"),
 			img: "/content/landing/languages.svg",
 			imgId: "three"
 		}

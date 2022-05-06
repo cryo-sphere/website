@@ -26,12 +26,19 @@ export const BigSectionComp: ReactFC<Props> = ({ title, desc, img, imgId }) => {
 	}, [inView]);
 
 	return (
-		<motion.div ref={ref} animate={controls} variants={variants} initial="hidden" className="landing-big-section">
+		<motion.div
+			ref={ref}
+			animate={controls}
+			variants={variants}
+			initial="hidden"
+			className="landing-big-section"
+			style={{ flexDirection: imgId === "two" ? "row-reverse" : "row" }}
+		>
 			<div className="landing-big-section-text">
 				<h1 className="landing-big-title">{title}</h1>
 				<p className="landing-big-text">{desc}</p>
 			</div>
-			<img id={imgId} className="landing-big-image" src={img} alt="karaoke image" />
+			<img id={imgId} className="landing-big-image" src={img} alt="image" />
 		</motion.div>
 	);
 };
