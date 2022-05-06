@@ -13,6 +13,7 @@ export const SmallSection: ReactFC<Props> = ({ t }) => {
 	const webplayer_var = t("navigation:webplayer");
 	const playlists_var = t("navigation:playlist");
 	const dashboard_var = t("navigation:dashboard");
+	const commands_var = t("navigation:commands");
 
 	const listLeft = [
 		{
@@ -26,7 +27,7 @@ export const SmallSection: ReactFC<Props> = ({ t }) => {
 			icon: "fa-solid fa-server"
 		},
 		{
-			title: t("landing:small_section.webplayer.title"),
+			title: capitalise(t("landing:small_section.webplayer.title", { commands_var })),
 			desc: capitalise(t("landing:small_section.webplayer.desc", { yes_var, webplayer_var })),
 			icon: "fa-solid fa-sliders"
 		}

@@ -16,7 +16,7 @@
 			"desc": "You won’t miss a single note with 99.99% guaranteed uptime."
 		},
 		"webplayer": {
-			"title": "Commands? So outdated.",
+			"title": "{{commands_var}}? So outdated.",
 			"desc": "{{yes_var}}, we have a {{webplayer_var}} too! Now you can do whatever you want from the web, no more switching to Discord."
 		},
 		"dashboard": {
