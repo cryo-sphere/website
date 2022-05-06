@@ -243,10 +243,10 @@ const Home: NextPage = () => {
 							Apply your favourite filters like Karaoke. Play with it all day long, they will never let you down.
 						</p>
 					</div>
-					<img className="landing-big-image" src="/content/landing/karaoke.svg" alt="karaoke image" />
+					<img id="one" className="landing-big-image" src="/content/landing/karaoke.svg" alt="karaoke image" />
 				</div>
 				<div className="landing-big-section">
-					<img className="landing-big-image" src="/content/landing/permissions.svg" alt="karaoke image" />
+					<img id="two" className="landing-big-image" src="/content/landing/permissions.svg" alt="karaoke image" />
 					<div className="landing-big-section-text">
 						<h1 className="landing-big-title">Nobody can hurt me, no more</h1>
 						<p className="landing-big-text">
@@ -263,7 +263,7 @@ const Home: NextPage = () => {
 							multiple different languages so everyone can experience the fun and high quality audio their way.
 						</p>
 					</div>
-					<img className="landing-big-image" src="/content/landing/languages.svg" alt="karaoke image" />
+					<img id="three" className="landing-big-image" src="/content/landing/languages.svg" alt="karaoke image" />
 				</div>
 			</div>
 		</Page>

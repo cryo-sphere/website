@@ -168,7 +168,7 @@
 
 .landing-big-title {
 	font-weight: 600;
-	font-size: 50px;
+	font-size: 40px;
 
 	line-height: 100%;
 }
@@ -178,20 +178,20 @@
 	font-size: 30px;
 
 	line-height: 100%;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .landing-big-image {
-	&:first-child {
+	&#one {
 		height: 400px;
 	}
 
-	&:nth-child(1) {
-		height: 600px;
+	&#two {
+		height: 540px;
 	}
 
-	&:nth-child(2) {
-		width: 1200px;
+	&#three {
+		width: 1080px;
 	}
 }
 
