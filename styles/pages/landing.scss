@@ -19,7 +19,10 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: left;
+	align-items: center;
+
+	position: relative;
+	z-index: 2;
 }
 
 .landing-top-title {
@@ -44,7 +47,6 @@
 	width: 330px;
 
 	margin-top: 20px;
-	// margin-left: 10px;
 
 	display: flex;
 	justify-content: space-between;
@@ -303,6 +305,145 @@
 		line-height: 30px;
 		margin-top: -15px;
 		margin-bottom: 25px;
+	}
+}
+
+@media screen and (max-width: 1750px) {
+	.landing-big-section {
+		flex-direction: column !important;
+
+		&#two {
+			flex-direction: column-reverse !important;
+		}
+
+		&#three .landing-big-section-text {
+			margin-bottom: 5rem;
+		}
+	}
+
+	.landing-big-section-text {
+		max-width: 60% !important;
+	}
+
+	.landing-big-image {
+		width: 100% !important;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.landing-top-section {
+		justify-content: space-between;
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+
+	.landing-small-topics {
+		flex-direction: column;
+	}
+
+	.landing-small-topics-right {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.landing-top-section {
+		flex-direction: column;
+	}
+
+	.landing-top-left {
+		margin-bottom: 2.5rem;
+	}
+
+	.jukebox-animation-jukebox {
+		height: 250px;
+	}
+
+	.landing-notes-animation {
+		max-width: 350px;
+		transform: translateX(-55px);
+	}
+
+	.landing-small-topic-icon {
+		i {
+			font-size: 25px;
+		}
+
+		i.fa-solid.fa-gears {
+			font-size: 20px;
+		}
+	}
+
+	.landing-big-section-text {
+		max-width: 100% !important;
+	}
+
+	.landing-big-title {
+		font-size: 35px;
+	}
+
+	.landing-big-text {
+		font-size: 25px;
+	}
+
+	.landing-small-title-text {
+		font-size: 35px;
+	}
+
+	.landing-small-desc {
+		font-size: 20px;
+	}
+
+	.landing-small-topic-text {
+		h1 {
+			font-size: 25px;
+		}
+
+		p {
+			font-size: 20px;
+			line-height: 25px;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.landing-top-section {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.landing-top-title {
+		font-size: 75px;
+	}
+
+	.landing-top-desc {
+		font-size: 20px;
+	}
+
+	.landing-top-buttons {
+		flex-direction: column;
+		height: fit-content;
+
+		.button.button-main {
+			margin-bottom: 10px;
+		}
+	}
+
+	.landing-small-desc {
+		width: unset !important;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.landing-notes-animation {
+		transform: translateX(-25px);
+		max-width: 100%;
+	}
+
+	.landing-top-left,
+	.landing-top-buttons,
+	.landing-top-desc {
+		width: 100%;
 	}
 }
 

@@ -27,6 +27,7 @@ export const BigSectionComp: ReactFC<Props> = ({ title, desc, img, imgId }) => {
 
 	return (
 		<motion.div
+			id={imgId}
 			ref={ref}
 			animate={controls}
 			variants={variants}
