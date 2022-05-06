@@ -1,39 +1,39 @@
 {
 	"big_section": {
-		"filters": "Apply your favourite filters like Karaoke. Play with it all day long, they will never let you down.",
-		"permissions": "Turn of {{commands_var}} for certain users or roles with one click of a button on the {{dashboard_var}}. Now they can’t mess with the bot anymore!",
-		"multilingual": "Stereo is used by hundreds of users across the globe and not everyone speaks English, that’s why Stereo is translated in multiple different languages so everyone can experience the fun and high quality audio their way."
+		"filters": "Pas je favoriete filters toe, zoals Karaoke. Speel er de hele dag mee, they will never let you down.",
+		"permissions": "Schakel {{commands_var}} uit voor bepaalde gebruikers of rollen met één klik op de knop op het {{dashboard_var}}. Nu kunnen ze niet meer met de bot knoeien!",
+		"multilingual": "Stereo wordt door honderden gebruikers over de hele wereld gebruikt en niet iedereen spreekt Engels. Daarom is Stereo vertaald in meerdere verschillende talen, zodat iedereen het leuke en hoge kwaliteit audio op zijn manier kan ervaren."
 	},
 	"small_section": {
-		"title": "Still not conviced?",
-		"desc": "Don’t worry, we aren’t done yet!",
+		"title": "Nog steeds niet overtuigd?",
+		"desc": "Maak je geen zorgen, we zijn nog niet klaar!",
 		"money": {
-			"title": "Money, which money?",
-			"desc": "Stereo is and will always be 100% free with no hidden costs."
+			"title": "Geld, welk geld?",
+			"desc": "Stereo is en zal altijd 100% gratis blijven zonder verborgen kosten."
 		},
 		"downtime": {
-			"title": "Downtime? That doesn’t exist.",
-			"desc": "You won’t miss a single note with 99.99% guaranteed uptime."
+			"title": "Downtime? Dat bestaat niet.",
+			"desc": "Je zult geen enkele noot missen met 99.99% gegarandeerde uptime."
 		},
 		"webplayer": {
-			"title": "{{commands_var}}? So outdated.",
-			"desc": "{{yes_var}}, we have a {{webplayer_var}} too! Now you can do whatever you want from the web, no more switching to Discord."
+			"title": "{{commands_var}}? Dat is zo oud.",
+			"desc": "{{yes_var}}, we hebben ook een {{webplayer_var}}! Nu kun je alles doen wat je wilt vanuit je browser, geen schakeling tussen Discord en je andere dingen meer."
 		},
 		"dashboard": {
-			"title": "Who doesn’t like dashboards?",
-			"desc": "Change all the settings to your likings with one click of a button on the {{dashboard_var}}."
+			"title": "Wie houdt er nou niet van dashboards?",
+			"desc": "Verander elke setting naar je eigen voorkeur met één klik op een knop op het {{dashboard_var}}."
 		},
 		"multiplatform": {
-			"title": "ughh, I hate using YouTube. 😠",
-			"desc": "Don’t worry, we got you covered! We support SoundCloud playback too! Spotify and Deezer are supported as search aswell!"
+			"title": "ughh, Ik wil YouTube niet gebruiken. 😠",
+			"desc": "Wees niet bang, we hebben een oplossing! Wij ondersteunen ook playback via SoundCloud! Spotify en Deezer zijn ook ondersteund voor zoekopdrachten!!"
 		},
 		"playlists": {
-			"title": "{{playlists_var}}, full of songs to listen to..",
-			"desc": "Stereo has it’s own playlist feature which allows you to store playable audio links with ease."
+			"title": "{{playlists_var}}, vol met nummers om naar te luisteren.",
+			"desc": "Stereo heeft zijn eigen afspeellijst functie waarmee je met gemak afspeelbare audio linkjes kan opslaan."
 		}
 	},
 	"invite": {
-		"title": "Join the club",
-		"desc": "{{invite_var}} Stereo today to listen to high quality audio for free!"
+		"title": "Join de club",
+		"desc": "{{invite_var}} Stereo vandaag en luister naar hoge kwaliteit audio voor niets!"
 	}
 }
