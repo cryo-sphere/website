@@ -1,0 +1,39 @@
+{
+	"big_section": {
+		"filters": "Apply your favourite filters like Karaoke. Play with it all day long, they will never let you down.",
+		"permissions": "Turn of {{commands_var}} for certain users or roles with one click of a button on the {{dashboard_var}}. Now they can’t mess with the bot anymore!",
+		"multilingual": "Stereo is used by hundreds of users across the globe and not everyone speaks English, that’s why Stereo is translated in multiple different languages so everyone can experience the fun and high quality audio their way."
+	},
+	"small_section": {
+		"title": "Still not conviced?",
+		"desc": "Don’t worry, we aren’t done yet!",
+		"money": {
+			"title": "Money, which money?",
+			"desc": "Stereo is and will always be 100% free with no hidden costs."
+		},
+		"downtime": {
+			"title": "Downtime? That doesn’t exist.",
+			"desc": "You won’t miss a single note with 99.99% guaranteed uptime."
+		},
+		"webplayer": {
+			"title": "Commands? So outdated.",
+			"desc": "{{yes_var}}, we have a {{webplayer_var}} too! Now you can do whatever you want from the web, no more switching to Discord."
+		},
+		"dashboard": {
+			"title": "Who doesn’t like dashboards?",
+			"desc": "Change all the settings to your likings with one click of a button on the {{dashboard_var}}."
+		},
+		"multiplatform": {
+			"title": "ughh, I hate using YouTube. 😠",
+			"desc": "Don’t worry, we got you covered! We support SoundCloud playback too! Spotify and Deezer are supported as search aswell!"
+		},
+		"playlists": {
+			"title": "{{playlists_var}}, full of songs to listen to..",
+			"desc": "Stereo has it’s own playlist feature which allows you to store playable audio links with ease."
+		}
+	},
+	"invite": {
+		"title": "Join the club",
+		"desc": "{{invite_var}} Stereo today to listen to high quality audio for free!"
+	}
+}
