@@ -268,6 +268,7 @@ const Home: NextPage = () => {
 					</div>
 				</div>
 			</Page>
+
 			<Page className="small-section">
 				<div className="landing-small-section-container">
 					<div className="landing-small-title">
@@ -337,6 +338,16 @@ const Home: NextPage = () => {
 							</div>
 						</div>
 					</div>
+				</div>
+			</Page>
+
+			<Page className="invite-section">
+				<div className="landing-small-section-container">
+					<div className="landing-small-title">
+						<h3 className="landing-small-title-text">Join the club</h3>
+						<p className="landing-small-desc">Invite Stereo today to listen to high quality audio for free!</p>
+					</div>
+					<Button title={capitalise(t("common:invite"))} style="main" type="link" path="/invite" external />
 				</div>
 			</Page>
 		</>

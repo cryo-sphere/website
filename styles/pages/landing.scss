@@ -197,6 +197,7 @@
 .small-section {
 	margin-top: 15rem;
 	padding-top: 2rem;
+	padding-bottom: 10rem;
 	background-color: $component-background-2;
 }
 
@@ -282,6 +283,24 @@
 		&#special {
 			font-size: 40px;
 		}
+	}
+}
+
+.invite-section {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	background-color: $component-background-3;
+
+	background-image: url("/content/landing/note.svg");
+	background-repeat: no-repeat;
+	background-size: 1300px;
+
+	.landing-small-desc {
+		width: 400px;
+		text-align: center;
+		line-height: 30px;
+		margin-top: -15px;
+		margin-bottom: 25px;
 	}
 }
 
