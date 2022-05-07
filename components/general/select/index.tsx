@@ -1,12 +1,17 @@
 import type { ReactFC } from "../../../utils/types";
-import ReactSelect, { Props, ThemeConfig } from "react-select";
+import ReactSelect, { Props as SelectProps, ThemeConfig } from "react-select";
 
 interface Option {
-	value: any;
+	value: string;
 	label: string;
 }
 
-const Select: ReactFC<Props<Option>> = (props) => {
+// type PropsSingle = SelectProps<Option, false> & { isMulti: false };
+// type PropsMulti = SelectProps<Option, true> & { isMulti: true };
+// type Props = PropsSingle | PropsMulti;
+
+type Props = SelectProps<Option>;
+const Select: ReactFC<Props> = (props) => {
 	const setTheme: ThemeConfig = (theme) => {
 		theme.colors = {
 			...theme.colors,
@@ -21,7 +26,7 @@ const Select: ReactFC<Props<Option>> = (props) => {
 		return theme;
 	};
 
-	return <ReactSelect {...props} theme={setTheme} />;
+	return <ReactSelect {...(props as SelectProps)} theme={setTheme} />;
 };
 
 export default Select;

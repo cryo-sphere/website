@@ -1,11 +1,26 @@
-// import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next";
 import type { ReactFC } from "../../../utils/types";
 import Button from "../button";
 import Page from "../page";
 import FooterCreditsLink from "./FooterCreditsLink";
+import { useRouter } from "next/router";
+import Select from "../select";
+import { useCookies } from "react-cookie";
 
 const Footer: ReactFC = () => {
-	// const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const { locales, locale } = useRouter();
+	const [, setCookie] = useCookies(["NEXT_LOCALE"]);
+
+	const currentLocale = locale ?? "en";
+	const supportedLocales = locales ?? ["en"];
+	const languages = new Intl.DisplayNames(currentLocale, { type: "language" });
+	const options = supportedLocales.map((lang) => ({ label: languages.of(lang) ?? lang, value: lang }));
+
+	const onSelectChange = (option: { label: string; value: any }) => {
+		setCookie("NEXT_LOCALE", option.value);
+		void i18n.changeLanguage(option.value);
+	};
 
 	return (
 		<Page className="footer-container">
@@ -71,6 +86,15 @@ const Footer: ReactFC = () => {
 					<i className="fa-solid fa-code" /> with <i className="fa-solid fa-heart" /> by{" "}
 					<Button type="link" style="string" path="/github/website" title="the Stereo team" />
 				</span>
+				<Select
+					id="long-value-select"
+					instanceId="long-value-select"
+					options={options}
+					menuPlacement="top"
+					defaultInputValue={currentLocale}
+					/* @ts-ignore annoying onChange select typing with multivalue */
+					onChange={onSelectChange}
+				/>
 			</div>
 		</Page>
 	);
