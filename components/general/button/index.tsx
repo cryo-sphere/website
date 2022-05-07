@@ -3,7 +3,7 @@ import type { ReactFC } from "../../../utils/types";
 
 interface PropsButton {
 	title: string;
-	style: "main" | "secondary-nav" | "secondary" | "danger";
+	style: "main" | "secondary-nav" | "secondary" | "danger" | "string";
 	external?: boolean;
 
 	type: "button";
@@ -12,7 +12,7 @@ interface PropsButton {
 
 interface PropsLink {
 	title: string;
-	style: "main" | "secondary-nav" | "secondary" | "danger";
+	style: "main" | "secondary-nav" | "secondary" | "danger" | "string";
 	external?: boolean;
 
 	type: "link";

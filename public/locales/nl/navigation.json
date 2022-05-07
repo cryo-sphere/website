@@ -3,5 +3,11 @@
 	"status": "status",
 	"dashboard": "dashboard",
 	"webplayer": "webspeler",
-	"playlists": "afspeellijsten"
+	"playlists": "afspeellijsten",
+	"links": "linkjes",
+	"other": "extra",
+	"support_server": "support server",
+	"tos": "Gebruikersvoorwaarden",
+	"privacy_policy": "Privacybeleid",
+	"credits": "credits"
 }

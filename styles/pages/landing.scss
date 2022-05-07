@@ -31,6 +31,9 @@
 
 	width: fit-content;
 	line-height: 90%;
+
+	font-family: "Stereo Logo Font", sans-serif;
+	font-weight: 400;
 }
 
 .landing-top-desc {
@@ -293,7 +296,6 @@
 .invite-section {
 	padding-top: 5rem;
 	padding-bottom: 5rem;
-	background-color: $component-background-3;
 
 	background-image: url("/content/landing/note.svg");
 	background-repeat: no-repeat;

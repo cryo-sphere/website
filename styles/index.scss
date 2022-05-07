@@ -86,6 +86,12 @@ a {
 	-ms-user-select: none; /* IE10+ */
 }
 
+/* === Register Logo Font === */
+@font-face {
+	font-family: "Stereo Logo Font";
+	src: url("/fonts/dynamo-mn-medium.ttf") format("woff");
+}
+
 /* == Tippy Theme */
 @font-face {
 	font-family: "Discord Font";
