@@ -8,7 +8,7 @@ import Select from "../select";
 import { useCookies } from "react-cookie";
 
 const Footer: ReactFC = () => {
-	const { t, i18n } = useTranslation();
+	const { i18n } = useTranslation();
 	const { locales, locale } = useRouter();
 	const [, setCookie] = useCookies(["NEXT_LOCALE"]);
 
