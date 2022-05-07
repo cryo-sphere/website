@@ -15,6 +15,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 				<meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 				<meta name="language" content="English" />
 
+				<meta name="theme-color" content="#78a4fa" />
 				<meta property="og:site_name" content="Stereo" />
 				<meta property="og:title" content="Stereo" />
 				<meta property="og:type" content="site" />
