@@ -1,6 +1,6 @@
 // import { useTranslation } from "next-i18next";
 import type { ReactFC } from "../../../utils/types";
-import Navlink from "../navbar/navlink";
+import Button from "../button";
 import Page from "../page";
 import FooterCreditsLink from "./FooterCreditsLink";
 
@@ -32,37 +32,37 @@ const Footer: ReactFC = () => {
 						Stereo
 					</li>
 					<li className="footer-links-link">
-						<Navlink path="/discord" title="Support" external />
+						<Button type="link" style="string" path="/discord" title="Support" external />
 					</li>
 					<li className="footer-links-link">
-						<Navlink path="/github" title="GitHub" external />
+						<Button type="link" style="string" path="/github" title="GitHub" external />
 					</li>
 					<li className="footer-links-link">
-						<Navlink path="/paypal" title="PayPal" external />
+						<Button type="link" style="string" path="/paypal" title="PayPal" external />
 					</li>
 				</ul>
 				<ul className="footer-links-list">
 					<li className="footer-links-title">Links</li>
 					<li className="footer-links-link">
-						<Navlink path="/commands" title="Commands" />
+						<Button type="link" style="string" path="/commands" title="Commands" />
 					</li>
 					<li className="footer-links-link">
-						<Navlink path="/faq" title="FAQ" />
+						<Button type="link" style="string" path="/faq" title="FAQ" />
 					</li>
 					<li className="footer-links-link">
-						<Navlink path="/status" title="Status" external />
+						<Button type="link" style="string" path="/status" title="Status" external />
 					</li>
 				</ul>
 				<ul className="footer-links-list">
 					<li className="footer-links-title">Legal</li>
 					<li className="footer-links-link">
-						<Navlink path="/tos" title="Terms of Service" />
+						<Button type="link" style="string" path="/tos" title="Terms of Service" />
 					</li>
 					<li className="footer-links-link">
-						<Navlink path="/privacy-policy" title="Privacy Policy" />
+						<Button type="link" style="string" path="/privacy-policy" title="Privacy Policy" />
 					</li>
 					<li className="footer-links-link">
-						<Navlink path="/credits" title="Credits" />
+						<Button type="link" style="string" path="/credits" title="Credits" />
 					</li>
 				</ul>
 			</div>

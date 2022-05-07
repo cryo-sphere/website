@@ -51,3 +51,15 @@
 		background-color: $button-danger-active;
 	}
 }
+
+.button-string {
+	color: $white;
+
+	padding: 0;
+	border-radius: 0;
+
+	&:hover,
+	&:focus-visible {
+		color: $grey;
+	}
+}
