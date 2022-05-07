@@ -1,10 +1,10 @@
-import { useTranslation } from "next-i18next";
+// import { useTranslation } from "next-i18next";
 import type { ReactFC } from "../../../utils/types";
 import Page from "../page";
 import FooterCreditsLink from "./FooterCreditsLink";
 
 const Footer: ReactFC = () => {
-	const { t } = useTranslation();
+	// const { t } = useTranslation();
 
 	return (
 		<Page className="footer-container">
