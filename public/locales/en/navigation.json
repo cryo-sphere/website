@@ -3,5 +3,11 @@
 	"status": "status",
 	"dashboard": "dashboard",
 	"webplayer": "webplayer",
-	"playlists": "playlists"
+	"playlists": "playlists",
+	"links": "links",
+	"other": "other",
+	"support_server": "support server",
+	"tos": "Terms of Service",
+	"privacy_policy": "Privacy Policy",
+	"credits": "credits"
 }

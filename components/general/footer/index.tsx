@@ -6,9 +6,10 @@ import FooterCreditsLink from "./FooterCreditsLink";
 import { useRouter } from "next/router";
 import Select from "../select";
 import { useCookies } from "react-cookie";
+import { capitalise } from "../../../utils/string";
 
 const Footer: ReactFC = () => {
-	const { i18n } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const { locales, locale } = useRouter();
 	const [, setCookie] = useCookies(["NEXT_LOCALE"]);
 
@@ -47,7 +48,7 @@ const Footer: ReactFC = () => {
 						Stereo
 					</li>
 					<li className="footer-links-link">
-						<Button type="link" style="string" path="/discord" title="Support" external />
+						<Button type="link" style="string" path="/discord" title={capitalise(t("navigation:support_server"))} external />
 					</li>
 					<li className="footer-links-link">
 						<Button type="link" style="string" path="/github" title="GitHub" external />
@@ -57,27 +58,27 @@ const Footer: ReactFC = () => {
 					</li>
 				</ul>
 				<ul className="footer-links-list">
-					<li className="footer-links-title">Links</li>
+					<li className="footer-links-title">{capitalise(t("navigation:links"))}</li>
 					<li className="footer-links-link">
-						<Button type="link" style="string" path="/commands" title="Commands" />
+						<Button type="link" style="string" path="/commands" title={capitalise(t("navigation:commands"))} />
 					</li>
 					<li className="footer-links-link">
 						<Button type="link" style="string" path="/faq" title="FAQ" />
 					</li>
 					<li className="footer-links-link">
-						<Button type="link" style="string" path="/status" title="Status" external />
+						<Button type="link" style="string" path="/status" title={capitalise(t("navigation:status"))} external />
 					</li>
 				</ul>
 				<ul className="footer-links-list">
-					<li className="footer-links-title">Legal</li>
+					<li className="footer-links-title">{capitalise(t("navigation:other"))}</li>
 					<li className="footer-links-link">
-						<Button type="link" style="string" path="/tos" title="Terms of Service" />
+						<Button type="link" style="string" path="/tos" title={t("navigation:tos")} />
 					</li>
 					<li className="footer-links-link">
-						<Button type="link" style="string" path="/privacy-policy" title="Privacy Policy" />
+						<Button type="link" style="string" path="/privacy-policy" title={t("navigation:privacy_policy")} />
 					</li>
 					<li className="footer-links-link">
-						<Button type="link" style="string" path="/credits" title="Credits" />
+						<Button type="link" style="string" path="/credits" title={capitalise(t("navigation:credits"))} />
 					</li>
 				</ul>
 			</div>
