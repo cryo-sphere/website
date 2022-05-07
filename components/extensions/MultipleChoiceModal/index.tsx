@@ -60,7 +60,7 @@ const MultipleChoiceModal: ReactFC<Props> = ({ onClick, onSelected, onSelectedAf
 		return () => {
 			if (nTimeout) clearTimeout(nTimeout);
 		};
-	});
+	}, []);
 
 	return (
 		<>
