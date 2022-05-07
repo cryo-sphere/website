@@ -97,6 +97,12 @@ const ModalNotifications: ReactFC<Props> = ({ title, icon, enabled }) => {
 			void iconController.start("exit");
 			void textController.start("exit");
 		}
+
+		return () => {
+			divController.stop();
+			iconController.stop();
+			textController.stop();
+		};
 	}, [enabled]);
 
 	return (

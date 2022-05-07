@@ -54,7 +54,7 @@ const ConfirmModal: ReactFC<Props> = ({ onClick, title, isOpen, onConfirm, onCon
 		return () => {
 			if (nTimeout) clearTimeout(nTimeout);
 		};
-	});
+	}, []);
 
 	return (
 		<>
