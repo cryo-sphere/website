@@ -1,5 +1,6 @@
 import type { GetStaticPropsContext, NextPage } from "next";
 import { i18n, useTranslation } from "next-i18next";
+import MetaTitle from "../components/general/metaTitle";
 import { InviteSection, SmallSection, TopSection } from "../components/pages/landing";
 import { loadTranslations } from "../utils/i18n";
 
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
 
 	return (
 		<>
+			<MetaTitle title="Stereo - Free high quality music everywhere. For all." />
 			<TopSection t={t} />
 			<SmallSection t={t} />
 			<InviteSection t={t} />
