@@ -103,3 +103,19 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+.footer-bottom-credits {
+	font-size: 17px;
+
+	.button-string {
+		font-size: 17px;
+		font-weight: 400;
+
+		color: $grey;
+
+		&:hover,
+		&:focus-visible {
+			color: $main;
+		}
+	}
+}

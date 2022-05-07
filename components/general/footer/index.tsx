@@ -66,6 +66,12 @@ const Footer: ReactFC = () => {
 					</li>
 				</ul>
 			</div>
+			<div className="footer-bottom-container">
+				<span className="footer-bottom-credits">
+					<i className="fa-solid fa-code" /> with <i className="fa-solid fa-heart" /> by{" "}
+					<Button type="link" style="string" path="/github/website" title="the Stereo team" />
+				</span>
+			</div>
 		</Page>
 	);
 };
