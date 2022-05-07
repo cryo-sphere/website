@@ -1,0 +1,53 @@
+.footer-container {
+	background-color: $component-background-3;
+	padding-top: 3rem;
+}
+
+.footer-top-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-bottom: 5rem;
+}
+
+.footer-logo-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.footer-logo {
+	display: flex;
+	align-items: center;
+}
+
+.footer-logo-image {
+	height: 50px;
+}
+
+.footer-logo-text {
+	margin-left: 10px;
+
+	font-family: "Stereo Logo Font", sans-serif;
+	font-weight: 400;
+	font-size: 50px;
+}
+
+.footer-logo-slogan {
+	font-size: 20px;
+	line-height: 27px;
+
+	max-width: 300px;
+}
+
+.footer-credits-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	img#crowdin {
+		width: 212px;
+	}
+}
