@@ -68,10 +68,14 @@
 	font-weight: 500;
 	font-size: 30px;
 
+	margin-bottom: -6px;
+
 	&#brand {
 		font-family: "Stereo Logo Font", sans-serif;
 		font-weight: 400;
 		font-size: 35px;
+
+		margin-bottom: 0;
 	}
 }
 
@@ -92,4 +96,10 @@
 			color: $main;
 		}
 	}
+}
+
+.footer-bottom-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
