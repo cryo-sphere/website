@@ -51,3 +51,45 @@
 		width: 212px;
 	}
 }
+
+.footer-center-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-bottom: 5rem;
+}
+
+.footer-links-list {
+	list-style: none;
+}
+
+.footer-links-title {
+	font-weight: 500;
+	font-size: 30px;
+
+	&#brand {
+		font-family: "Stereo Logo Font", sans-serif;
+		font-weight: 400;
+		font-size: 35px;
+	}
+}
+
+.footer-links-link > a {
+	font-size: 20px !important;
+
+	color: $grey;
+
+	i {
+		color: $grey;
+	}
+
+	&:hover,
+	&:focus-visible {
+		color: $main;
+
+		i {
+			color: $main;
+		}
+	}
+}
