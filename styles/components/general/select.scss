@@ -1,3 +1,31 @@
-.select-custom-menulist {
-	padding: 20px;
+.react-select-container {
+	min-width: 200px;
+}
+
+.react-select-option {
+	display: flex !important;
+	align-items: center;
+
+	transition: all 0.3s ease;
+
+	&.focused {
+		background-color: $select-active;
+	}
+
+	&.selected {
+		background-color: $component-background-2;
+	}
+}
+
+.react-select-icon {
+	max-width: 30px;
+	max-height: 30px;
+
+	border-radius: $component-border-radius;
+	margin-right: 10px;
+}
+
+.react-select-option-value {
+	text-align: center;
+	width: fit-content;
 }
