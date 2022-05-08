@@ -4,23 +4,42 @@ import Button from "../button";
 import Page from "../page";
 import FooterCreditsLink from "./FooterCreditsLink";
 import { useRouter } from "next/router";
-import Select from "../select";
 import { useCookies } from "react-cookie";
 import { capitalise } from "../../../utils/string";
+import { Option, SingleSelect } from "../select";
+import type { SingleValue } from "react-select";
+import { useState } from "react";
+
+const ExceptionFlags: Record<string, string> = {
+	en: "https://flagcdn.com/gb.svg"
+};
 
 const Footer: ReactFC = () => {
-	const { t, i18n } = useTranslation();
-	const { locales, locale } = useRouter();
+	const { t } = useTranslation();
+	const { locales, locale, route, push } = useRouter();
 	const [, setCookie] = useCookies(["NEXT_LOCALE"]);
 
 	const currentLocale = locale ?? "en";
 	const supportedLocales = locales ?? ["en"];
 	const languages = new Intl.DisplayNames(currentLocale, { type: "language" });
-	const options = supportedLocales.map((lang) => ({ label: languages.of(lang) ?? lang, value: lang }));
+	const options = supportedLocales.map<Option>((lang) => ({
+		label: languages.of(lang) ?? lang,
+		value: lang,
+		icon: { type: "image", image: ExceptionFlags[lang] ?? `https://flagcdn.com/${lang}.svg` }
+	}));
 
-	const onSelectChange = (option: { label: string; value: any }) => {
-		setCookie("NEXT_LOCALE", option.value);
-		void i18n.changeLanguage(option.value);
+	const [selectedLang, setSelectedLang] = useState<Option>({
+		label: languages.of(currentLocale) ?? currentLocale,
+		value: currentLocale,
+		icon: { type: "image", image: ExceptionFlags[currentLocale] ?? `https://flagcdn.com/${currentLocale}.svg` }
+	});
+
+	const onSelectChange = (option: SingleValue<Option>) => {
+		if (option) {
+			setCookie("NEXT_LOCALE", option.value);
+			setSelectedLang(option);
+			void push(route, undefined, { locale: option.value });
+		}
 	};
 
 	return (
@@ -87,15 +106,7 @@ const Footer: ReactFC = () => {
 					<i className="fa-solid fa-code" /> with <i className="fa-solid fa-heart" /> by{" "}
 					<Button type="link" style="string" path="/github/website" title="the Stereo team" />
 				</span>
-				<Select
-					id="long-value-select"
-					instanceId="long-value-select"
-					options={options}
-					menuPlacement="top"
-					defaultInputValue={currentLocale}
-					/* @ts-ignore annoying onChange select typing with multivalue */
-					onChange={onSelectChange}
-				/>
+				<SingleSelect instanceId="language-select" options={options} menuPlacement="top" value={selectedLang} onChange={onSelectChange} />
 			</div>
 		</Page>
 	);
