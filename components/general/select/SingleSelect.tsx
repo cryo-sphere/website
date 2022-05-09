@@ -138,7 +138,8 @@ export const SingleSelect: ReactFC<Props> = (props) => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	const styles: StylesConfig<Option, false> = {
-		dropdownIndicator: (base) => ({ ...base, transform: `rotate(${menuOpen ? "180deg" : "0deg"})` })
+		dropdownIndicator: (base) => ({ ...base, transform: `rotate(${menuOpen ? "180deg" : "0deg"})` }),
+		indicatorSeparator: (base) => ({ ...base, display: "none" })
 	};
 	return (
 		<Select
