@@ -10,9 +10,11 @@ import Select, {
 	InputProps,
 	DropdownIndicatorProps,
 	components,
-	StylesConfig
+	StylesConfig,
+	NoticeProps
 } from "react-select";
 import { ReactNode, useState } from "react";
+import { useTranslation } from "next-i18next";
 
 export interface Option {
 	label: string;
@@ -140,6 +142,16 @@ const Option: ReactFC<OptionProps<Option, false>> = (props) => {
 	);
 };
 
+const NoOptionsMessage: ReactFC<NoticeProps<Option, false>> = (props) => {
+	const { t } = useTranslation();
+
+	return (
+		<components.NoOptionsMessage className="react-select-notice" {...props}>
+			{t("common:dropdown.no_options")}
+		</components.NoOptionsMessage>
+	);
+};
+
 export const SingleSelect: ReactFC<Props> = (props) => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
@@ -154,7 +166,7 @@ export const SingleSelect: ReactFC<Props> = (props) => {
 			onMenuClose={() => setMenuOpen(false)}
 			onMenuOpen={() => setMenuOpen(true)}
 			styles={styles}
-			components={{ Option, MenuList, Menu, Control, SingleValue, Input, DropdownIndicator }}
+			components={{ Option, MenuList, Menu, Control, SingleValue, Input, DropdownIndicator, NoOptionsMessage }}
 		/>
 	);
 };

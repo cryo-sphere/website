@@ -7,5 +7,8 @@
 	"login": "login",
 	"logout": "logout",
 	"invite": "invite",
-	"karaoke": "karaoke"
+	"karaoke": "karaoke",
+	"dropdown": {
+		"no_options": "No options found"
+	}
 }
