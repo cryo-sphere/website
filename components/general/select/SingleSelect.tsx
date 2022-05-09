@@ -1,7 +1,5 @@
 import type { ReactFC } from "../../../utils/types";
 import Select, {
-	Props as SelectProps,
-	GroupBase,
 	OptionProps,
 	MenuListProps,
 	MenuProps,
@@ -15,28 +13,7 @@ import Select, {
 } from "react-select";
 import { ReactNode, useState } from "react";
 import { useTranslation } from "next-i18next";
-
-export interface Option {
-	label: string;
-	value: any;
-	icon?: OptionIcon;
-}
-
-export interface OptionIconColour {
-	type: "colour";
-	colour: string;
-}
-export interface OptionIconIcon {
-	type: "icon";
-	icon: string;
-}
-export interface OptionIconImage {
-	type: "image";
-	image: string;
-}
-
-export type OptionIcon = { type: "colour" | "icon" | "image" } & (OptionIconColour | OptionIconIcon | OptionIconImage);
-export type Props = SelectProps<Option, false, GroupBase<Option>>;
+import type { Option as OptionProp, SingleProps } from "./SelectTypes";
 
 const getEventNames = (isSelected: boolean, isFocused: boolean) => {
 	const names: string[] = [];
@@ -47,7 +24,7 @@ const getEventNames = (isSelected: boolean, isFocused: boolean) => {
 	return names.join(" ");
 };
 
-const Control: ReactFC<ControlProps<Option, false>> = (props) => {
+const Control: ReactFC<ControlProps<OptionProp, false>> = (props) => {
 	const className = `react-select-control ${getEventNames(false, props.isFocused)}`;
 
 	return (
@@ -57,7 +34,7 @@ const Control: ReactFC<ControlProps<Option, false>> = (props) => {
 	);
 };
 
-const DropdownIndicator: ReactFC<DropdownIndicatorProps<Option, false>> = (props) => {
+const DropdownIndicator: ReactFC<DropdownIndicatorProps<OptionProp, false>> = (props) => {
 	const className = `react-select-indicator`;
 
 	return (
@@ -67,7 +44,7 @@ const DropdownIndicator: ReactFC<DropdownIndicatorProps<Option, false>> = (props
 	);
 };
 
-const SingleValue: ReactFC<SingleValueProps<Option, false>> = (props) => {
+const SingleValue: ReactFC<SingleValueProps<OptionProp, false>> = (props) => {
 	let extra: ReactNode;
 	if (props.data.icon) {
 		switch (props.data.icon.type) {
@@ -96,7 +73,7 @@ const SingleValue: ReactFC<SingleValueProps<Option, false>> = (props) => {
 	);
 };
 
-const Input: ReactFC<InputProps<Option, false>> = (props) => {
+const Input: ReactFC<InputProps<OptionProp, false>> = (props) => {
 	return (
 		<components.Input className="react-select-input" {...props}>
 			{props.children}
@@ -104,7 +81,7 @@ const Input: ReactFC<InputProps<Option, false>> = (props) => {
 	);
 };
 
-const Menu: ReactFC<MenuProps<Option, false>> = (props) => {
+const Menu: ReactFC<MenuProps<OptionProp, false>> = (props) => {
 	return (
 		<components.Menu className="react-select-menu" {...props}>
 			{props.children}
@@ -112,7 +89,7 @@ const Menu: ReactFC<MenuProps<Option, false>> = (props) => {
 	);
 };
 
-const MenuList: ReactFC<MenuListProps<Option, false>> = (props) => {
+const MenuList: ReactFC<MenuListProps<OptionProp, false>> = (props) => {
 	return (
 		<components.MenuList className="react-select-menulist" {...props}>
 			{props.children}
@@ -120,7 +97,7 @@ const MenuList: ReactFC<MenuListProps<Option, false>> = (props) => {
 	);
 };
 
-const Option: ReactFC<OptionProps<Option, false>> = (props) => {
+const Option: ReactFC<OptionProps<OptionProp, false>> = (props) => {
 	let extra: ReactNode;
 	let color = "#fff";
 	if (props.data.icon) {
@@ -154,7 +131,7 @@ const Option: ReactFC<OptionProps<Option, false>> = (props) => {
 	);
 };
 
-const NoOptionsMessage: ReactFC<NoticeProps<Option, false>> = (props) => {
+const NoOptionsMessage: ReactFC<NoticeProps<OptionProp, false>> = (props) => {
 	const { t } = useTranslation();
 
 	return (
@@ -164,10 +141,10 @@ const NoOptionsMessage: ReactFC<NoticeProps<Option, false>> = (props) => {
 	);
 };
 
-export const SingleSelect: ReactFC<Props> = (props) => {
+export const SingleSelect: ReactFC<SingleProps> = (props) => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
-	const styles: StylesConfig<Option, false> = {
+	const styles: StylesConfig<OptionProp, false> = {
 		dropdownIndicator: (base) => ({ ...base, transform: `rotate(${menuOpen ? "180deg" : "0deg"})` }),
 		indicatorSeparator: (base) => ({ ...base, display: "none" })
 	};
