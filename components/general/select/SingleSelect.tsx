@@ -111,12 +111,16 @@ const MenuList: ReactFC<MenuListProps<Option, false>> = (props) => {
 
 const Option: ReactFC<OptionProps<Option, false>> = (props) => {
 	let extra: ReactNode;
+	let color = "#fff";
 	if (props.data.icon) {
 		switch (props.data.icon.type) {
 			case "image":
 				extra = <img className="react-select-icon" src={props.data.icon.image} alt="" />;
 				break;
-
+			case "colour":
+				color = props.data.icon.colour;
+				extra = <p className="react-select-colour" style={{ backgroundColor: color }} />;
+				break;
 			default:
 				break;
 		}
@@ -128,7 +132,9 @@ const Option: ReactFC<OptionProps<Option, false>> = (props) => {
 		<>
 			<components.Option className={className} {...props}>
 				{extra}
-				<p className="react-select-option-value">{props.children}</p>
+				<p className="react-select-option-value" style={{ color }}>
+					{props.children}
+				</p>
 			</components.Option>
 		</>
 	);
