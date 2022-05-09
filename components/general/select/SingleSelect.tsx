@@ -74,7 +74,12 @@ const SingleValue: ReactFC<SingleValueProps<Option, false>> = (props) => {
 			case "image":
 				extra = <img className="react-select-icon" src={props.data.icon.image} alt="" />;
 				break;
-
+			case "colour":
+				{
+					const { colour } = props.data.icon;
+					extra = <p className="react-select-colour" style={{ backgroundColor: colour }} />;
+				}
+				break;
 			default:
 				break;
 		}
@@ -82,7 +87,8 @@ const SingleValue: ReactFC<SingleValueProps<Option, false>> = (props) => {
 
 	return (
 		<components.SingleValue className="react-select-singlevalue" {...props}>
-			{extra} <p className="react-select-option-value">{props.children}</p>
+			{extra}
+			<p className="react-select-option-value">{props.children}</p>
 		</components.SingleValue>
 	);
 };
