@@ -1,5 +1,5 @@
 import type { ReactFC } from "../../../utils/types";
-import Select, { Props as SelectProps, GroupBase, OptionProps, components } from "react-select";
+import Select, { Props as SelectProps, GroupBase, OptionProps, MenuListProps, MenuProps, components } from "react-select";
 import type { ReactNode } from "react";
 
 export interface Option {
@@ -23,6 +23,22 @@ export interface OptionIconImage {
 
 export type OptionIcon = { type: "colour" | "icon" | "image" } & (OptionIconColour | OptionIconIcon | OptionIconImage);
 export type Props = SelectProps<Option, false, GroupBase<Option>>;
+
+const Menu: ReactFC<MenuProps<Option, false>> = (props) => {
+	return (
+		<components.Menu className="react-select-menu" {...props}>
+			{props.children}
+		</components.Menu>
+	);
+};
+
+const MenuList: ReactFC<MenuListProps<Option, false>> = (props) => {
+	return (
+		<components.MenuList className="react-select-menulist" {...props}>
+			{props.children}
+		</components.MenuList>
+	);
+};
 
 const Option: ReactFC<OptionProps<Option, false>> = (props) => {
 	let extra: ReactNode;
@@ -50,5 +66,5 @@ const Option: ReactFC<OptionProps<Option, false>> = (props) => {
 };
 
 export const SingleSelect: ReactFC<Props> = (props) => {
-	return <Select {...props} className="react-select-container" menuIsOpen components={{ Option }} />;
+	return <Select {...props} className="react-select-container" components={{ Option, MenuList, Menu }} />;
 };

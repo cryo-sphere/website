@@ -2,11 +2,26 @@
 	min-width: 200px;
 }
 
+.react-select-menu {
+	border-radius: 0 !important;
+	background: none !important;
+	box-shadow: none !important;
+}
+
+.react-select-menulist {
+	padding: 15px !important;
+	border-radius: $component-border-radius;
+
+	background-color: $component-background-3;
+	border: 1px solid $component-background-border;
+}
+
 .react-select-option {
 	display: flex !important;
 	align-items: center;
 
 	transition: all 0.3s ease;
+	border-radius: $component-border-radius;
 
 	&.focused {
 		background-color: $select-active;
@@ -14,6 +29,10 @@
 
 	&.selected {
 		background-color: $component-background-2;
+	}
+
+	&:not(:first-child) {
+		margin-top: 5px;
 	}
 }
 
