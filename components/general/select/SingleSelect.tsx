@@ -1,6 +1,18 @@
 import type { ReactFC } from "../../../utils/types";
-import Select, { Props as SelectProps, GroupBase, OptionProps, MenuListProps, MenuProps, components } from "react-select";
-import type { ReactNode } from "react";
+import Select, {
+	Props as SelectProps,
+	GroupBase,
+	OptionProps,
+	MenuListProps,
+	MenuProps,
+	ControlProps,
+	SingleValueProps,
+	InputProps,
+	DropdownIndicatorProps,
+	components,
+	StylesConfig
+} from "react-select";
+import { ReactNode, useState } from "react";
 
 export interface Option {
 	label: string;
@@ -23,6 +35,63 @@ export interface OptionIconImage {
 
 export type OptionIcon = { type: "colour" | "icon" | "image" } & (OptionIconColour | OptionIconIcon | OptionIconImage);
 export type Props = SelectProps<Option, false, GroupBase<Option>>;
+
+const getEventNames = (isSelected: boolean, isFocused: boolean) => {
+	const names: string[] = [];
+
+	if (isSelected) names.push("selected");
+	if (isFocused) names.push("focused");
+
+	return names.join(" ");
+};
+
+const Control: ReactFC<ControlProps<Option, false>> = (props) => {
+	const className = `react-select-control ${getEventNames(false, props.isFocused)}`;
+
+	return (
+		<components.Control className={className} {...props}>
+			{props.children}
+		</components.Control>
+	);
+};
+
+const DropdownIndicator: ReactFC<DropdownIndicatorProps<Option, false>> = (props) => {
+	const className = `react-select-indicator`;
+
+	return (
+		<components.DropdownIndicator className={className} {...props}>
+			{props.children}
+		</components.DropdownIndicator>
+	);
+};
+
+const SingleValue: ReactFC<SingleValueProps<Option, false>> = (props) => {
+	let extra: ReactNode;
+	if (props.data.icon) {
+		switch (props.data.icon.type) {
+			case "image":
+				extra = <img className="react-select-icon" src={props.data.icon.image} alt="" />;
+				break;
+
+			default:
+				break;
+		}
+	}
+
+	return (
+		<components.SingleValue className="react-select-singlevalue" {...props}>
+			{extra} <p className="react-select-option-value">{props.children}</p>
+		</components.SingleValue>
+	);
+};
+
+const Input: ReactFC<InputProps<Option, false>> = (props) => {
+	return (
+		<components.Input className="react-select-input" {...props}>
+			{props.children}
+		</components.Input>
+	);
+};
 
 const Menu: ReactFC<MenuProps<Option, false>> = (props) => {
 	return (
@@ -53,7 +122,7 @@ const Option: ReactFC<OptionProps<Option, false>> = (props) => {
 		}
 	}
 
-	const className = `react-select-option ${props.isSelected ? "selected" : ""} ${props.isFocused ? "focused" : ""}`;
+	const className = `react-select-option ${getEventNames(props.isSelected, props.isFocused)}`;
 
 	return (
 		<>
@@ -66,5 +135,19 @@ const Option: ReactFC<OptionProps<Option, false>> = (props) => {
 };
 
 export const SingleSelect: ReactFC<Props> = (props) => {
-	return <Select {...props} className="react-select-container" components={{ Option, MenuList, Menu }} />;
+	const [menuOpen, setMenuOpen] = useState(false);
+
+	const styles: StylesConfig<Option, false> = {
+		dropdownIndicator: (base) => ({ ...base, transform: `rotate(${menuOpen ? "180deg" : "0deg"})` })
+	};
+	return (
+		<Select
+			{...props}
+			className="react-select-container"
+			onMenuClose={() => setMenuOpen(false)}
+			onMenuOpen={() => setMenuOpen(true)}
+			styles={styles}
+			components={{ Option, MenuList, Menu, Control, SingleValue, Input, DropdownIndicator }}
+		/>
+	);
 };
