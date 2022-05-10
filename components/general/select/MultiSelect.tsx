@@ -1,8 +1,8 @@
 import type { ReactFC } from "../../../utils/types";
-import Select, { MultiValueProps, components, StylesConfig, MultiValueGenericProps } from "react-select";
+import Select, { MultiValueProps, components, MultiValueGenericProps } from "react-select";
 import { ReactNode, useState } from "react";
 import type { Option as OptionProp, MultiProps } from "./SelectTypes";
-import { getCustomComponents } from "./SelectComponents";
+import { getCustomComponents, getStyles } from "./SelectComponents";
 
 const MultiValue: ReactFC<MultiValueProps<OptionProp, true>> = (props) => {
 	let extra: ReactNode;
@@ -57,12 +57,9 @@ const MultiValueContainer: ReactFC<MultiValueGenericProps<OptionProp, true>> = (
 export const MultiSelect: ReactFC<MultiProps> = (props) => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
-	const styles: StylesConfig<OptionProp, true> = {
-		dropdownIndicator: (base) => ({ ...base, transform: `rotate(${menuOpen ? "180deg" : "0deg"})` }),
-		indicatorSeparator: (base) => ({ ...base, display: "none" })
-	};
+	const components = getCustomComponents<true>();
+	const styles = getStyles<true>(menuOpen);
 
-	const componentsB = getCustomComponents<true>();
 	return (
 		<Select
 			{...props}
@@ -74,7 +71,7 @@ export const MultiSelect: ReactFC<MultiProps> = (props) => {
 			onMenuOpen={() => setMenuOpen(true)}
 			styles={styles}
 			components={{
-				...componentsB,
+				...components,
 				MultiValue,
 				MultiValueContainer
 			}}

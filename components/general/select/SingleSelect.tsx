@@ -1,8 +1,8 @@
 import type { ReactFC } from "../../../utils/types";
-import Select, { SingleValueProps, components, StylesConfig } from "react-select";
+import Select, { SingleValueProps, components } from "react-select";
 import { ReactNode, useState } from "react";
 import type { Option as OptionProp, SingleProps } from "./SelectTypes";
-import { getCustomComponents } from "./SelectComponents";
+import { getCustomComponents, getStyles } from "./SelectComponents";
 
 const SingleValue: ReactFC<SingleValueProps<OptionProp, false>> = (props) => {
 	let extra: ReactNode;
@@ -36,12 +36,9 @@ const SingleValue: ReactFC<SingleValueProps<OptionProp, false>> = (props) => {
 export const SingleSelect: ReactFC<SingleProps> = (props) => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
-	const styles: StylesConfig<OptionProp, false> = {
-		dropdownIndicator: (base) => ({ ...base, transform: `rotate(${menuOpen ? "180deg" : "0deg"})` }),
-		indicatorSeparator: (base) => ({ ...base, display: "none" })
-	};
-
+	const styles = getStyles<false>(menuOpen);
 	const components = getCustomComponents<false>();
+
 	return (
 		<Select
 			{...props}
@@ -49,7 +46,6 @@ export const SingleSelect: ReactFC<SingleProps> = (props) => {
 			classNamePrefix="react-select"
 			onMenuClose={() => setMenuOpen(false)}
 			onMenuOpen={() => setMenuOpen(true)}
-			// menuIsOpen
 			styles={styles}
 			components={{ ...components, SingleValue }}
 		/>

@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next";
 import type { ReactNode } from "react";
-import { components, DropdownIndicatorProps, MenuProps, MenuListProps, OptionProps, NoticeProps } from "react-select";
+import { components, MenuProps, MenuListProps, OptionProps, NoticeProps, StylesConfig } from "react-select";
 import type { ReactFC } from "../../../utils/types";
 import type { Option } from "./SelectTypes";
 
@@ -14,14 +14,6 @@ export const getEventNames = (isSelected: boolean, isFocused: boolean) => {
 };
 
 export function getCustomComponents<Multi extends boolean>() {
-	const DropdownIndicator: ReactFC<DropdownIndicatorProps<Option, Multi>> = (props) => {
-		return (
-			<components.DropdownIndicator className="react-select-indicator" {...props}>
-				{props.children}
-			</components.DropdownIndicator>
-		);
-	};
-
 	const Menu: ReactFC<MenuProps<Option, Multi>> = (props) => {
 		return (
 			<components.Menu className="react-select-menu" {...props}>
@@ -83,12 +75,18 @@ export function getCustomComponents<Multi extends boolean>() {
 	};
 
 	return {
-		// Control,
-		DropdownIndicator,
-		// Input,
 		Menu,
 		MenuList,
 		Option,
 		NoOptionsMessage
 	};
+}
+
+export function getStyles<Multi extends boolean>(menuOpen: boolean) {
+	const styles: StylesConfig<Option, Multi> = {
+		dropdownIndicator: (base) => ({ ...base, transform: `rotate(${menuOpen ? "180deg" : "0deg"})` }),
+		indicatorSeparator: (base) => ({ ...base, display: "none" })
+	};
+
+	return styles;
 }
