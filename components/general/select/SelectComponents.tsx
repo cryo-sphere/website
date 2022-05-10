@@ -1,19 +1,3 @@
-/*
-function test<bool extends boolean>() {
-	const Control: ReactFC<ControlProps<Option, bool>> = (props) => {
-		const className = `react-select-control ${getEventNames(false, props.isFocused)}`;
-	
-		return (
-			<components.Control className={className} {...props}>
-				{props.children}
-			</components.Control>
-		);
-	};
-}
-
-test<true>();
-*/
-
 import { useTranslation } from "next-i18next";
 import type { ReactNode } from "react";
 import { ControlProps, components, DropdownIndicatorProps, InputProps, MenuProps, MenuListProps, OptionProps, NoticeProps } from "react-select";
@@ -32,7 +16,6 @@ export const getEventNames = (isSelected: boolean, isFocused: boolean) => {
 export function getCustomComponents<Multi extends boolean>() {
 	const Control: ReactFC<ControlProps<Option, Multi>> = (props) => {
 		const className = `react-select-control ${getEventNames(false, props.isFocused)}`;
-
 		return (
 			<components.Control className={className} {...props}>
 				{props.children}
@@ -41,10 +24,8 @@ export function getCustomComponents<Multi extends boolean>() {
 	};
 
 	const DropdownIndicator: ReactFC<DropdownIndicatorProps<Option, Multi>> = (props) => {
-		const className = `react-select-indicator`;
-
 		return (
-			<components.DropdownIndicator className={className} {...props}>
+			<components.DropdownIndicator className="react-select-indicator" {...props}>
 				{props.children}
 			</components.DropdownIndicator>
 		);

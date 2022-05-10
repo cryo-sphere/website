@@ -74,11 +74,11 @@
 	height: 15px;
 	border-radius: 50%;
 
-	margin-right: 10px;
+	margin-right: 5px;
 }
 
 #react-select-icon-icon {
-	margin-right: 10px;
+	margin-right: 5px;
 	text-align: center;
 }
 
@@ -89,4 +89,32 @@
 
 .react-select-notice {
 	padding: 0 !important;
+}
+
+.react-select__multi-value {
+	background-color: transparent !important;
+}
+
+.react-select-multivalue {
+	display: flex !important;
+	align-items: center;
+
+	&.container {
+		border-radius: 10px !important;
+	}
+
+	&[role="button"] {
+		cursor: pointer;
+		padding: 0px 5px 0px 0px !important;
+		background: none !important;
+
+		svg {
+			height: 17px;
+			width: 17px;
+		}
+
+		&:hover * {
+			color: $button-danger !important;
+		}
+	}
 }

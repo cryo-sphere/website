@@ -9,6 +9,7 @@ import { capitalise } from "../../../utils/string";
 import { Option, SingleSelect } from "../select";
 import type { SingleValue } from "react-select";
 import { useState } from "react";
+import { MultiSelect } from "../select/MultiSelect";
 
 const ExceptionFlags: Record<string, string> = {
 	en: "https://flagcdn.com/gb.svg"
@@ -107,6 +108,44 @@ const Footer: ReactFC = () => {
 					<Button type="link" style="string" path="/github/website" title="the Stereo team" />
 				</span>
 				<SingleSelect instanceId="language-select" options={options} menuPlacement="top" value={selectedLang} onChange={onSelectChange} />
+				<MultiSelect
+					instanceId="language-select-2"
+					options={[
+						{
+							label: "green",
+							value: "green",
+							icon: {
+								type: "colour",
+								colour: "#1ABC9C"
+							}
+						},
+						{
+							label: "blue",
+							value: "blue",
+							icon: {
+								type: "colour",
+								colour: "#78a4fa"
+							}
+						},
+						{
+							label: "orange",
+							value: "orange",
+							icon: {
+								type: "colour",
+								colour: "#f16e21"
+							}
+						},
+						{
+							label: "purple",
+							value: "purple"
+							// icon: {
+							// 	type: "colour",
+							// 	colour: "purple"
+							// }
+						}
+					]}
+					menuPlacement="top"
+				/>
 			</div>
 		</Page>
 	);
