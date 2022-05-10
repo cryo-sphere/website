@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next";
 import type { ReactNode } from "react";
-import { ControlProps, components, DropdownIndicatorProps, InputProps, MenuProps, MenuListProps, OptionProps, NoticeProps } from "react-select";
+import { components, DropdownIndicatorProps, MenuProps, MenuListProps, OptionProps, NoticeProps } from "react-select";
 import type { ReactFC } from "../../../utils/types";
 import type { Option } from "./SelectTypes";
 
@@ -14,28 +14,11 @@ export const getEventNames = (isSelected: boolean, isFocused: boolean) => {
 };
 
 export function getCustomComponents<Multi extends boolean>() {
-	const Control: ReactFC<ControlProps<Option, Multi>> = (props) => {
-		const className = `react-select-control ${getEventNames(false, props.isFocused)}`;
-		return (
-			<components.Control className={className} {...props}>
-				{props.children}
-			</components.Control>
-		);
-	};
-
 	const DropdownIndicator: ReactFC<DropdownIndicatorProps<Option, Multi>> = (props) => {
 		return (
 			<components.DropdownIndicator className="react-select-indicator" {...props}>
 				{props.children}
 			</components.DropdownIndicator>
-		);
-	};
-
-	const Input: ReactFC<InputProps<Option, Multi>> = (props) => {
-		return (
-			<components.Input className="react-select-input" {...props}>
-				{props.children}
-			</components.Input>
 		);
 	};
 
@@ -100,9 +83,9 @@ export function getCustomComponents<Multi extends boolean>() {
 	};
 
 	return {
-		Control,
+		// Control,
 		DropdownIndicator,
-		Input,
+		// Input,
 		Menu,
 		MenuList,
 		Option,

@@ -46,7 +46,7 @@ export const SingleSelect: ReactFC<SingleProps> = (props) => {
 		<Select
 			{...props}
 			className="react-select-container"
-			classNamePrefix="a"
+			classNamePrefix="react-select"
 			onMenuClose={() => setMenuOpen(false)}
 			onMenuOpen={() => setMenuOpen(true)}
 			// menuIsOpen
