@@ -2,6 +2,10 @@
 	min-width: 200px;
 }
 
+.react-select__input {
+	color: $white !important;
+}
+
 .react-select__indicator {
 	transition: transform 0.15s ease-out 0s !important;
 }
