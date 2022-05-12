@@ -67,14 +67,15 @@
 }
 
 .jukebox-animation-jukebox {
-	height: 300px;
+	width: 300px;
+	height: 400px;
 }
 
 .landing-notes-animation {
 	width: 100%;
 	max-width: 375px;
 
-	transform: translateX(-35px);
+	transform: translateX(-43px) translateY(50px);
 
 	position: absolute;
 	z-index: 1;
@@ -363,7 +364,7 @@
 
 	.landing-notes-animation {
 		max-width: 350px;
-		transform: translateX(-55px);
+		transform: translateX(-25px);
 	}
 
 	.landing-small-topic-icon {
