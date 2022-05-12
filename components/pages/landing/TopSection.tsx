@@ -4,7 +4,7 @@ import type { ReactFC } from "../../../utils/types";
 import Button from "../../general/button";
 import Page from "../../general/page";
 import { BigSectionComp } from "./BigSectionComp";
-import { NotesAnimationSvg, NoteSvg } from "./Svgs";
+import { NotesAnimationSvg, NoteSvg, SpeakerAnimationSvg } from "./Svgs";
 
 interface Props {
 	t: TFunction;
@@ -49,7 +49,7 @@ export const TopSection: ReactFC<Props> = ({ t }) => {
 				</div>
 				<div className="landing-top-right">
 					<div className="jukebox-animation">
-						<object className="jukebox-animation-jukebox" type="image/svg+xml" data="/content/landing/jukebox.svg" />
+						<SpeakerAnimationSvg />
 						<NotesAnimationSvg />
 					</div>
 				</div>
